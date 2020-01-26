@@ -1,1 +1,7 @@
 .env
+.virtual-env
+bin/
+__pycache__/
+env/
+venv/
+virtual-env/
