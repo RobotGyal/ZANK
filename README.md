@@ -9,9 +9,9 @@ This project was made for the purpose of ...
 
 ## Technologies
 This project was built with:
-* [Python] (https://www.python.org/)
-* [Flask] (https://www.fullstackpython.com/flask.html)
-* [Jinja2] (https://www.fullstackpython.com/jinja2.html)
+* [Python](https://www.python.org/)
+* [Flask](https://www.fullstackpython.com/flask.html)
+* [Jinja2](https://www.fullstackpython.com/jinja2.html)
 
 ## How to Use / Installation
 1. Clone repo to your local source
