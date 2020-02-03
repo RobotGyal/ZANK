@@ -26,6 +26,15 @@ class ZankTests(TestCase):
         "description": "A guardrail in an office space is at least 4 ft tall.",
     }
 
+    # Show Route Test (this is used to display details for one page)
+    @mock.patch('pymongo.collection.Collection.find_one')
+    def test_show_code(self, mock_find):
+        """User is sees a specific rule of the building code in full detail."""
+        mock_find.return_value = sample_code
+        # retrieve the page using the url pattern fpr the show route
+        result = self.client.get(f'/codes/{sample_code_id}')  # may differ
+        self.assertEqual(result.status, '200 OK')
+
 
 if __name__ == '__main__':
     unittest_main()
