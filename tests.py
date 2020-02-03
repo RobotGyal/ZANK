@@ -26,6 +26,11 @@ class ZankTests(TestCase):
         "description": "A guardrail in an office space is at least 4 ft tall.",
     }
 
+    # Search feature Route Test
+    def test_get_search_results(self):
+        '''User is able to see codes relevant to a search query they input.'''
+        pass
+
     # Show Route Test (this is used to display details for one page)
     @mock.patch('pymongo.collection.Collection.find_one')
     def test_show_code(self, mock_find):
