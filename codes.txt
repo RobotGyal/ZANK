@@ -1,0 +1,7 @@
+{
+“Title”:  <00011 and short descipriton of code>
+“Description”: “descriptipm of the code” 
+“Examples”: <link to a floor plan image>”
+“Last_revised”: year when the code was updated (which version am I looking at?)
+“Duration_period”: number of years until the code is revised again
+}

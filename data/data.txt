@@ -1,0 +1,75 @@
+EXAMPLE LAYOUT
+
+{
+“Title”:  <00011 and short description of code>
+“Description”: “description of the code” 
+“Examples”: <link to a floor plan image>”
+“Last_revised”: year when the code was updated (which version am I looking at?)
+“Duration_period”: number of years until the code is revised again
+}
+
+
+REAL DATA
+
+{
+“Title”:  <11B-404.2.1 Revolving doors, gates, and turnstiles>
+“Description”: “Revolving doors, revolving gates, and turnstiles shall not be part of an accessible route.” 
+“Examples”: <http://www.ada.gov/regs2010/2010ADAStandards/images/ADA-AB22.gif>”
+“Last_revised”: 
+“Duration_period”: 
+}
+
+
+{
+“Title”:  <208.2 Minimum Number (208 Parking Spaces)>
+“Description”: “Parking spaces complying with 502 shall be provided in accordance with Table 208.2 except as required by 208.2.1, 208.2.2, and 208.2.3. Where more than one parking facility is provided on a site, the number of accessible spaces provided on the site shall be calculated according to the number of spaces required for each parking facility.The term "parking facility" is used Section 208.2 instead of the term "parking lot" so that it is clear that both parking lots and parking structures are required to comply with this section. The number of parking spaces required to be accessible is to be calculated separately for each parking facility; the required number is not to be based on the total number of parking spaces provided in all of the parking facilities provided on the site.” 
+“Examples”: <https://s3.amazonaws.com/static.northeastada.org/local/en/park2-eng.png>”
+“Last_revised”: 
+“Duration_period”: 
+}
+
+
+{
+“Title”:  <804.2.2 U-Shaped - (804 Kitchen and Kitchenettes)>
+“Description”: “In U-shaped kitchens enclosed on three contiguous sides, clearance between all opposing base cabinets, counter tops, appliances, or walls within kitchen work areas shall be 60 inches (1525 mm) minimum.” 
+“Examples”: <http://www.ada.gov/regs2010/2010ADAStandards/images/ADA-AB111.gif>”
+“Last_revised”: 
+“Duration_period”: 
+}
+
+
+{
+“Title”:  <702.1 General (702 Fire Alarm Systems)>
+“Description”: “ire alarm systems shall have permanently installed audible and visible alarms complying with NFPA 72 (1999 or 2002 edition) (incorporated by reference, see "Referenced Standards" in Chapter 1), except that the maximum allowable sound level of audible notification appliances complying with section 4-3.2.1 of NFPA 72 (1999 edition) shall have a sound level no more than 110 dB at the minimum hearing distance from the audible appliance. In addition, alarms in guest rooms required to provide communication features shall comply with sections 4-3 and 4-4 of NFPA 72 (1999 edition) or sections 7.4 and 7.5 of NFPA 72 (2002 edition).” 
+“Examples”: <N/A>”
+“Last_revised”: 
+“Duration_period”: 
+}
+
+
+{
+“Title”:  <504.5 Nosings (504 Stariways)>
+“Description”: “The radius of curvature at the leading edge of the tread shall be 1/2 inch (13 mm) maximum. Nosings that project beyond risers shall have the underside of the leading edge curved or beveled. Risers shall be permitted to slope under the tread at an angle of 30 degrees maximum from vertical. The permitted projection of the nosing shall extend 1 1/2 inches (38 mm) maximum over the tread below.”
+“Examples”: <http://www.ada.gov/regs2010/2010ADAStandards/images/ADA-AB55.gif>”
+“Last_revised”: 
+“Duration_period”: 
+}
+
+
+{
+“Title”:  <903.4 Back Support (903 Benches)>
+“Description”: “The bench shall provide for back support or shall be affixed to a wall. Back support shall be 42 inches (1065 mm) long minimum and shall extend from a point 2 inches (51 mm) maximum above the seat surface to a point 18 inches (455 mm) minimum above the seat surface. Back support shall be 2 1/2 inches (64 mm) maximum from the rear edge of the seat measured horizontally.
+Advisory 903.4 Back Support. To assist in transferring to the bench, consider providing grab bars on a wall adjacent to the bench, but not on the seat back. If provided, grab bars cannot obstruct transfer to the bench.”
+“Examples”: <http://www.ada.gov/regs2010/2010ADAStandards/images/ADA-AB115.gif>”
+“Last_revised”: 
+“Duration_period”: 
+}
+
+
+{
+“Title”:  <1010.1 Turning Space (1010 SHOOTING FACILITIES WITH FIRING POSITIONS)>
+“Description”: “A circular turning space 60 inches (1525 mm) diameter minimum with slopes not steeper than 1:48 shall be provided at shooting facilities with firing positions.” 
+“Examples”: <N/A>”
+“Last_revised”: 
+“Duration_period”: 
+}
