@@ -13,7 +13,7 @@
 		<div class="jumbotron text-center">
 		  <h1>Building Specifications</h1>
 		  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-			<a class="btn btn-info" href="home.html" role="button">Home Page</a>
+			<a class="btn btn-info" href="{{ url_for('index') }}" role="button">Home Page</a>
 		</div>
 
 		<div class="container">
@@ -22,19 +22,19 @@
 		      <h3>Result 1</h3>
 		      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
 		      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-					<a class="btn btn-info" href="details.html" role="button">Learn More</a>
+					<a class="btn btn-info" href="{{ url_for('details') }}" role="button">Learn More</a>
 		    </div>
 		    <div class="col-sm-4">
 		      <h3>Result 2</h3>
 		      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
 		      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-					<a class="btn btn-info" href="details.html" role="button">Learn More</a>
+					<a class="btn btn-info" href="{{ url_for('details') }}" role="button">Learn More</a>
 		    </div>
 		    <div class="col-sm-4">
 		      <h3>Result 3</h3>
 		      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
 		      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-					<a class="btn btn-info" href="details.html" role="button">Learn More</a>
+					<a class="btn btn-info" href="{{ url_for('details') }}" role="button">Learn More</a>
 		    </div>
 		  </div>
 		</div>
@@ -46,6 +46,5 @@
 			<div class="footer-copyright text-center py-3">© 2019 Copyright:
 				<a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
 			</div>
-
 
 		</html>

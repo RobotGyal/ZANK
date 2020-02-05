@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+    <title>zank</title>
+</head>
+        <body>
+            <style>
+            body {
+                padding-top: 100px;
+            }
+            </style>
+            <!-- NAVBAR -->
+            <nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
+                <a href="#" style="color:#00cdcd;" class="navbar-brand">ZANK</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="navbar-item">
+                            <a href="{{ url_for('results') }}" class="nav-link">Results</a>
+                        <li class="navbar-item">
+                            <a href="{{ url_for('details') }}" class="nav-link">Details</a>
+
+                    </ul>
+                      <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal3">
+                    Login!
+                    </button>
+                </div>
+            </nav>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" color=#00cdcd id="exampleModal3Label">Login</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                                        <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                        </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-info">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- first jumbotron -->
+            <div class="jumbotron jumbotron-fluid background">
+                <div class="container">
+                    <h1 class="display-3 text-center " id='logoFont'>
+                        <font color="#00cdcd">TESTING CAROUSEL </font>
+                    </h1>
+                    <font color="#00cdcd">
+                    <p class="lead text-center">
+                        <form id="content">
+                            <input type="text" name="input" class="input" id="search-input">
+                            <button type="reset" class="search" id="search-btn"></button>
+                        </form>
+                        <style>
+                            body {
+                                background-color: #ff9800;
+                                /* color: white; */
+                                margin: 0;
+                            }
+
+                            .jumbotron {
+                                margin-bottom: 150px;
+                            }
+
+                            #content {
+                                position: absolute;
+                                height: 25px;
+                                width: 300px;
+                                margin-left: 170px;
+                                top: 45%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+
+                            #content.on {
+                                -webkit-animation-name: in-out;
+                                animation-name: in-out;
+                                -webkit-animation-duration: 0.7s;
+                                animation-duration: 0.7s;
+                                -webkit-animation-timing-function: linear;
+                                animation-timing-function: linear;
+                                -webkit-animation-iteration-count: 1;
+                                animation-iteration-count: 1;
+                            }
+
+                            input {
+                                box-sizing: border-box;
+                                width: 50px;
+                                height: 50px;
+                                border: 4px solid #00cdcd;
+                                border-radius: 50%;
+                                background: none;
+                                color: #00cdcd;
+                                font-size: 16px;
+                                font-weight: 400;
+                                font-family: Roboto;
+                                outline: 0;
+                                -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out,
+                                    padding 0.2s;
+                                transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out,
+                                    padding 0.2s;
+                                -webkit-transition-delay: 0.4s;
+                                transition-delay: 0.4s;
+                                -webkit-transform: translate(-100%, -50%);
+                                -ms-transform: translate(-100%, -50%);
+                                transform: translate(-100%, -50%);
+                            }
+
+                            .search {
+                                background: none;
+                                position: absolute;
+                                top: 0px;
+                                left: 0;
+                                height: 50px;
+                                width: 50px;
+                                padding: 0;
+                                border-radius: 100%;
+                                outline: 0;
+                                border: 0;
+                                color: inherit;
+                                cursor: pointer;
+                                -webkit-transition: 0.2s ease-in-out;
+                                transition: 0.2s ease-in-out;
+                                -webkit-transform: translate(-100%, -50%);
+                                -ms-transform: translate(-100%, -50%);
+                                transform: translate(-100%, -50%);
+                            }
+
+                            .search:before {
+                                content: "";
+                                position: absolute;
+                                width: 20px;
+                                height: 4px;
+                                background-color: #00cdcd;
+                                -webkit-transform: rotate(45deg);
+                                -ms-transform: rotate(45deg);
+                                transform: rotate(45deg);
+                                margin-top: 26px;
+                                margin-left: 17px;
+                                -webkit-transition: 0.2s ease-in-out;
+                                transition: 0.2s ease-in-out;
+                            }
+
+                            .close {
+                                -webkit-transition: 0.4s ease-in-out;
+                                transition: 0.4s ease-in-out;
+                                -webkit-transition-delay: 0.4s;
+                                transition-delay: 0.4s;
+                            }
+
+                            .close:before {
+                                content: "";
+                                position: absolute;
+                                width: 27px;
+                                height: 4px;
+                                margin-top: -1px;
+                                margin-left: -13px;
+                                background-color: #00cdcd;
+                                -webkit-transform: rotate(45deg);
+                                -ms-transform: rotate(45deg);
+                                transform: rotate(45deg);
+                                -webkit-transition: 0.2s ease-in-out;
+                                transition: 0.2s ease-in-out;
+                            }
+
+                            .close:after {
+                                content: "";
+                                position: absolute;
+                                width: 27px;
+                                height: 4px;
+                                background-color: #00cdcd;
+                                margin-top: -1px;
+                                margin-left: -13px;
+                                cursor: pointer;
+                                -webkit-transform: rotate(-45deg);
+                                -ms-transform: rotate(-45deg);
+                                transform: rotate(-45deg);
+                            }
+
+                            .square {
+                                box-sizing: border-box;
+                                padding: 0 40px 0 10px;
+                                width: 300px;
+                                height: 50px;
+                                border: 4px solid #00cdcd;
+                                border-radius: 0;
+                                background: none;
+                                color: #00cdcd;
+                                font-family: Roboto;
+                                font-size: 16px;
+                                font-weight: 400;
+                                outline: 0;
+                                -webkit-transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out,
+                                    padding 0.2s;
+                                transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out,
+                                    padding 0.2s;
+                                -webkit-transition-delay: 0.4s, 0s, 0.4s;
+                                transition-delay: 0.4s, 0s, 0.4s;
+                                -webkit-transform: translate(-100%, -50%);
+                                -ms-transform: translate(-100%, -50%);
+                                transform: translate(-100%, -50%);
+                            }
+
+                        
+                        </style>
+                        <script>
+                            // updated 2019
+                        const input = document.getElementById("search-input");
+                        const searchBtn = document.getElementById("search-btn");
+
+                        const expand = () => {
+                        searchBtn.classList.toggle("close");
+                        input.classList.toggle("square");
+                        };
+
+                        searchBtn.addEventListener("click", expand);
+                        </script>
+                        
+                        </font>
+                    </p>
+                </div>
+            </div>
+
+            <!-- double jumbotrons -->
+            <div class="row">
+                    <div class="container" style="display: flex">
+                        <div class="jumbotron text-center col">
+                            <h1>What will you search for?</h1>
+                            <p>Results to display .</p>
+                            <a class="btn btn-info" href="{{ url_for('search_codes') }}" role="button">Search Now!</a>
+                        </div>
+                    </div>
+                </div>
+
+          <!-- Footer Links -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+              <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+            </div>
+
+
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        </body>
+    </html>
