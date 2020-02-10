@@ -1,0 +1,1 @@
+web: gunicorn zank.wsgi --log-file -
