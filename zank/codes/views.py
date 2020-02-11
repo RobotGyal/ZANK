@@ -16,6 +16,7 @@ import zank
 
 def home(request):
     '''Render the home page of the site.'''
+    # return a render for the home page template
     pass
 
 
