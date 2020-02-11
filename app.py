@@ -10,13 +10,16 @@ codes = db.codes
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def index():
     return render_template("home.html", codes=codes.find())
 
+
 @app.route("/about")
 def about():
     return render_template("about.html")
+
 
 @app.route("/codes", methods=["GET", "POST"])
 def insert_code():
@@ -27,11 +30,11 @@ def insert_code():
         "last_revised": "MM-DD-YYYY",
         "duration_period": "4 years"
         [
-        "title": "101",
-        "description": "abc",
-        "examples": "img",
-        "last_revised": "1-04-2006",
-        "duration_period": "6 years"
+            "title": "101",
+            "description": "abc",
+            "examples": "img",
+            "last_revised": "1-04-2006",
+            "duration_period": "6 years"
         ]
     }
 
@@ -39,16 +42,17 @@ def insert_code():
 
     code_id = codes.insert_one(code).inserted_id
     print(f"added code id: {code_id}")
-    return redirect(url_for("index", code_id = code_id))
+    return redirect(url_for("index", code_id=code_id))
 
 
 @app.route("/search", methods=['POST'])
 def search_codes():
-    query =  request.get("title")
+    query = request.get("title")
     result = codes.find_one('title', query)
     code_id = result.get('_id')
 
-    return redirect(url_for('show_code', code_id = code_id))
+    return redirect(url_for('show_code', code_id=code_id))
+
 
 @app.route("/codes/<code_id>", methods=['GET', 'POST'])
 def show_code(code_id):
@@ -64,19 +68,22 @@ def show_code(code_id):
     # }
 
     # code = codes.find_one({'_id': ObjectId(code_id)})
-    return render_template("detail.html", code=code, code_id = code_id)
+    return render_template("detail.html", code=code, code_id=code_id)
 
-#query param find_all() in code through text.
+# query param find_all() in code through text.
+
 
 @app.route("/results")
 def results():
-    #search_query
-    return render_template("results.html") #search_query=search_query, code_id = code_id)
+    # search_query
+    return render_template("results.html")  # search_query=search_query, code_id=code_id)
+
 
 @app.route("/details")
 def details():
-    #code_id
-    return render_template("details.html") #code_id=code_id)
+    # code_id
+    return render_template("details.html")  # code_id=code_id)
+
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
