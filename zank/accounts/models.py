@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from explorer import settings
+from zank import settings
 from django.urls import reverse
 from django.conf import settings
 
@@ -9,6 +9,7 @@ class ArchitectOrOfficer(models.Model):
     '''A specific type of User - may be a government official or architect.'''
     user = models.OneToOneField(settings.AUTH_USER_MODEL,
                                 on_delete=models.CASCADE)
+    is_officer = models.BooleanField(help_text="How will you use ZANK?")
 
     def __str__(self):
         '''Return the related User's username.'''
