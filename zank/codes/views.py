@@ -21,7 +21,15 @@ def home(request):
 
 class CodeList(ListView):
     '''For showing the reference of all codes, or just ones based on search.'''
-    pass
+    model = Code
+    template_name = ''
+
+    def get(self, request):
+        ''' Get a list of all notes currently in the database.'''
+        codes = self.get_queryset()
+        return render(request, self.template_name, {
+            codes: codes
+        })
 
 
 class CodeDetail(DetailView):
