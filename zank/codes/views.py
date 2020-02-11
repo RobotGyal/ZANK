@@ -83,7 +83,7 @@ class CodeUpdate(UserPassesTestMixin, UpdateView):
     queryset = Code.objects.all()
 
     def test_func(self):
-        '''Ensures the user editing the trip is the passenger who posted it.'''
+        '''Ensures the user adding the Code is an officer.'''
         code = self.get_object()
         user = self.request.user
         return (user.is_authenticated is True and
@@ -92,4 +92,14 @@ class CodeUpdate(UserPassesTestMixin, UpdateView):
 
 class CodeDelete(LoginRequiredMixin, DeleteView):
     '''For removing Code instances from the db.'''
-    pass
+    model = Code
+    template_name = 'codes/crud/delete.html'
+    success_url = reverse_lazy('codes:reference')
+    queryset = Code.objects.all()
+
+    def test_func(self):
+        '''Ensures the user adding the Code is an officer.'''
+        code = self.get_object()
+        user = self.request.user
+        return (user.is_authenticated is True and
+                user.architectorofficer.is_officer is True)
