@@ -26,7 +26,7 @@ class CodeList(ListView):
     template_name = ''
 
     def get(self, request):
-        ''' Get a list of all notes currently in the database.'''
+        ''' Get a list of all codes currently in the database.'''
         codes = self.get_queryset()
         return render(request, self.template_name, {
             codes: codes
@@ -35,7 +35,25 @@ class CodeList(ListView):
 
 class CodeDetail(DetailView):
     '''For showing the details of a specific Code.'''
-    pass
+    model = Code
+    template_name = ''
+
+    def get(self, request, slug):
+        """Renders a page to show a specific code in full detail.
+           Parameters:
+           slug(slug): specific slug of the Code instance.
+           request(HttpRequest): the HTTP request sent to the server
+
+           Returns:
+           render: a page of the Code
+
+        """
+        code = self.get_queryset().get(slug__iexact=slug)
+        context = {
+            'code': code
+        }
+        return render(request, self.template_name, context)
+
 
 
 class CodeCreate(UserPassesTestMixin, CreateView):
