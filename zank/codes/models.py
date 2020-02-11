@@ -38,3 +38,7 @@ class Code(models.Model):
 
         # call save on the superclass
         return super(Code, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        '''Returns a fully qualified path for building code instance.'''
+        pass
