@@ -13,7 +13,8 @@ class ArchitectOrOfficer(models.Model):
 
     def __str__(self):
         '''Return the related User's username.'''
-        return f"{self.user.username}"
+        type = "Officer" if is_officer is True else "Architect"
+        return f"{self.user.username} the {self.type}"
 
     """
     def get_absolute_url(self):
