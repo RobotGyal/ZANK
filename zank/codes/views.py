@@ -59,7 +59,7 @@ class CodeCreate(UserPassesTestMixin, CreateView):
     '''For adding new Code instances to the db.'''
     model = Code
     form_class = CodeForm
-    template_name = 'codes/create.html'
+    template_name = 'codes/crud/create.html'
     queryset = Code.objects.all()
 
     def form_valid(self, form):
@@ -77,7 +77,17 @@ class CodeCreate(UserPassesTestMixin, CreateView):
 
 class CodeUpdate(UserPassesTestMixin, UpdateView):
     '''For making changes to existing Code instances.'''
-    pass
+    model = Code
+    form_class = CodeForm
+    template_name = 'codes/crud/update.html'
+    queryset = Code.objects.all()
+
+    def test_func(self):
+        '''Ensures the user editing the trip is the passenger who posted it.'''
+        code = self.get_object()
+        user = self.request.user
+        return (user.is_authenticated is True and
+                user.architectorofficer.is_officer is True)
 
 
 class CodeDelete(LoginRequiredMixin, DeleteView):
