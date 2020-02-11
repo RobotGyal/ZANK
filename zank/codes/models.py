@@ -1,6 +1,7 @@
 from django.db import models
 from accounts.models import ArchitectOrOfficer
 from django.conf import settings
+from django.utils.text import slugify
 
 
 class Code(models.Model):
