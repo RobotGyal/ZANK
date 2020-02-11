@@ -1,5 +1,6 @@
 from django.db import models
 from accounts.models import ArchitectOrOfficer
+from django.conf import settings
 
 
 class Code(models.Model):
@@ -10,8 +11,7 @@ class Code(models.Model):
                             help_text="Unique URL path to access this code." +
                                       "Computer Generated.")
     description = models.TextField(help_text="Full text of the code.")
-    date_posted = models.DateTimeField('date published')
-    created = models.DateTimeField(auto_now_add=True, help_text=(
+    date_posted = models.DateTimeField(auto_now_add=True, help_text=(
             "The date and time this page was created. " +
             "Automatically generated when the model saves.")
         )
@@ -19,8 +19,8 @@ class Code(models.Model):
         "The date and time this page was updated. " +
         "Automatically generated when the model updates.")
     )
-    posted_by = models.OneToOneField(ArchitectOrOfficer,
-                                     on_delete=models.CASCADE
+    posted_by = models.OneToOneField(settings.AUTH_USER_MODEL,
+                                     on_delete=models.PROTECT
                                      )
     can_dos = models.TextField(
         help_text="List of do's associated with this code.")
