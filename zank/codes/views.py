@@ -55,10 +55,24 @@ class CodeDetail(DetailView):
         return render(request, self.template_name, context)
 
 
-
 class CodeCreate(UserPassesTestMixin, CreateView):
     '''For adding new Code instances to the db.'''
-    pass
+    model = Code
+    form_class = CodeForm
+    template_name = 'codes/create.html'
+    queryset = Code.objects.all()
+
+    def form_valid(self, form):
+        '''Initializes the post_by field based on who submitted the form.'''
+        form.instance.posted_by = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        '''Ensures the user adding the Code is an officer.'''
+        code = self.get_object()
+        user = self.request.user
+        return (user.is_authenticated is True and
+                user.architectorofficer.is_officer is True)
 
 
 class CodeUpdate(UserPassesTestMixin, UpdateView):
