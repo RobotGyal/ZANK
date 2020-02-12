@@ -9,7 +9,7 @@ class ZankTests(TestCase):
         '''Create a testing client, will be needed for each test.'''
         self.client = app.test_client()
 
-        # show errors from Flask that are raised in testing
+        # show errors from Flask that are raised during testing
         app.config['TESTING'] = True
 
     # Home Page Route Test
