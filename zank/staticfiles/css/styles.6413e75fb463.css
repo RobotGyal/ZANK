@@ -1,0 +1,9 @@
+.background {
+    background-image: url("../img/sf.1db0170fd019.png");
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    background-size: cover;
+}
