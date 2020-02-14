@@ -25,7 +25,8 @@ Visit the live link in order to visit the site and discover full functionality!
 
 
 ## Features
-* 
+* Search functionality for building codes!
+
 
 ## Code Snippet
 ```
@@ -39,10 +40,17 @@ def search_codes():
 ```
 
 ## Contributors 
-Kabsa A - [KabsaA](https://github.com/KabsaA)
-Zain Raza - [UPstartDeveloper](https://github.com/UPstartDeveloper)
-Vladyslav nykoliuk - [vladyslavnUA](https://github.com/vladyslavnUA)
+* **Kabsa A** - [KabsaA](https://github.com/KabsaA)
+*Frontend Lead*
 
+* **Zain Raza** - [UPstartDeveloper](https://github.com/UPstartDeveloper)
+*Product Manager, SCRUM Master, and Design Lead*
+
+* **Vladyslav Nykoliuk** - [vladyslavnUA](https://github.com/vladyslavnUA)
+*Backend Lead*
+
+* **Aleia Knight** - [Robotgyal](https://github.com/robotgyal)
+*Gitmaster*
 
 
 ## Credit
