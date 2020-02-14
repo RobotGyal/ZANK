@@ -4,7 +4,7 @@ The Wikipedia for building codes!
 ## Motivation
 This project was made for the purpose of ...
 
-# Learning Outcomes
+## Learning Outcomes
 * Manage Sprint Planning and Sprint Retrospectives and SCRUM to make progress on a team project and ensure the highest chances of success
 * Utilize advanced Git, Github and Unix Utilities to streamline their coding effectiveness
 * Navigate dynamics of professional teams including conflict, delegation, prioritization, difficult conversations, expectation setting, defining roles and responsibilities
