@@ -1,7 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-from accounts.models import Profile
 import django.contrib.auth.forms as auth_forms
 
 # credit for subclassing UserCreationForm belongs to
@@ -14,8 +13,8 @@ class SignUpForm(UserCreationForm):
         model = User
         fields = ['email', 'username',
                   'first_name', 'last_name',
-                  'password1', 'password2',
-                  'is_officer']
+                  'password1', 'password2'
+                  ]
 
     def save(self, commit=True):
         '''Initializes fields of the new User instance.'''
