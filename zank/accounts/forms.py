@@ -13,7 +13,8 @@ class SignUpForm(UserCreationForm):
         model = User
         fields = ['email', 'username',
                   'first_name', 'last_name',
-                  'password1', 'password2']
+                  'password1', 'password2'
+                  ]
 
     def save(self, commit=True):
         '''Initializes fields of the new User instance.'''
