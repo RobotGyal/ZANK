@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
 from dotenv import load_dotenv
 # import django_heroku
 import dj_database_url
+from django.urls import reverse
 load_dotenv()
 
 
@@ -134,6 +134,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+# login redirects to the home page
+LOGIN_REDIRECT_URL = 'codes:home_page'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
