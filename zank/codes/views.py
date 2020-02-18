@@ -22,20 +22,20 @@ def home(request):
 class CodeList(ListView):
     '''For showing the reference of all codes, or just ones based on search.'''
     model = Code
-    template_name = ''
+    template_name = 'codes/results.html'
 
     def get(self, request):
         ''' Get a list of all codes currently in the database.'''
         codes = self.get_queryset()
         return render(request, self.template_name, {
-            codes: codes
+            'codes': codes
         })
 
 
 class CodeDetail(DetailView):
     '''For showing the details of a specific Code.'''
     model = Code
-    template_name = ''
+    template_name = 'codes/details.html'
 
     def get(self, request, slug):
         """Renders a page to show a specific code in full detail.
