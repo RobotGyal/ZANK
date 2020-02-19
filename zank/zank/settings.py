@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
 from dotenv import load_dotenv
-import django_heroku
+# import django_heroku
 import dj_database_url
+from django.urls import reverse
 load_dotenv()
 
 
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'codes',
     'accounts',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -133,6 +134,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+# login redirects to the home page
+LOGIN_REDIRECT_URL = 'codes:home_page'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -141,10 +144,22 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+# AWS settings
+AWS_STORAGE_BUCKET_NAME = str(os.getenv('AWS_STORAGE_BUCKET_NAME'))
+AWS_ACCESS_KEY_ID = str(os.getenv('AWS_ACCESS_KEY_ID'))
+AWS_SECRET_ACCESS_KEY = str(os.getenv('AWS_SECRET_ACCESS_KEY'))
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # used to create a remote database
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 
 # more help with deployment
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

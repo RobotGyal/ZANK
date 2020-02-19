@@ -8,7 +8,8 @@
         <div class="col">
             <!-- Form to sign up for a nee account -->
             <form method="post" class="mx-auto">
-                <input type="hidden" name="csrfmiddlewaretoken" value="JWpDxIqd0XAypXZ0N68FkmuX3HKCFTqW2ZsEr66JI5A6hC2XyIbBBY2CIajUOIxx">
+                {% csrf_token %}
+                <!--<input type="hidden" name="csrfmiddlewaretoken" value="JWpDxIqd0XAypXZ0N68FkmuX3HKCFTqW2ZsEr66JI5A6hC2XyIbBBY2CIajUOIxx"> -->
 
                     <!-- Email address field -->
                     <div class="form-group row">
