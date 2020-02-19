@@ -18,46 +18,23 @@
   <link href="{% static 'css/freelancer.min.css' %}" rel="stylesheet">
 
 </head>
-
+{% block content %}
 <body id="page-top">
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Zank</a>
-      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Reference</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Masthead -->
+  <!-- Header -->
   <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
 
-      <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-5" src="{% static 'img/zank.png' %}" alt="">
+      <!-- Logo Image -->
+      <img src="../../../staticfiles/img/zank.png" alt="">
 
-      <!-- Masthead Heading -->
-      <h1 class="masthead-heading text-uppercase mb-0">Searching For..</h1>
-      <input class="form-control" id="name" type="text" placeholder="Search Building Codes" required="required">
-      <a class="btn btn-xl btn-outline-light" href="results.html" role="button">Search Now!</a>
+      <!-- Search bar  -->
+      <form class="col-xs-4">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search Building Codes" aria-label="Search">
+        <button type="submit">Search</button>
+      </form>
 
-      <!-- Icon Divider -->
+      <!-- Divider -->
       <div class="divider-custom divider-light">
         <div class="divider-custom-line"></div>
         <div class="divider-custom-icon">
@@ -66,17 +43,14 @@
         <div class="divider-custom-line"></div>
       </div>
 
-      <!-- Masthead Subheading
-      <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p> -->
-
     </div>
   </header>
 
-  <!-- Portfolio Section -->
+  <!-- Portfolio  -->
   <section class="page-section portfolio" id="portfolio">
     <div class="container">
 
-      <!-- Portfolio Section Heading -->
+      <!-- Portfolio Header -->
       <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Reference</h2>
 
       <!-- Icon Divider -->
@@ -88,7 +62,7 @@
         <div class="divider-custom-line"></div>
       </div>
 
-      <!-- Portfolio Grid Items -->
+      <!-- Portfolio Items -->
       <div class="row">
 
         <!-- Portfolio Item 1 -->
@@ -99,7 +73,7 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="{% static 'img/portfolio/cabin.png' %}" alt="">
+            <img class="img-fluid" src="../../../staticfiles/img/portfolio/cabin.png" alt="">
           </div>
         </div>
 
@@ -111,7 +85,7 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="{% static 'img/portfolio/cake.png' %}" alt="">
+            <img class="img-fluid" src="../../../staticfiles/img/portfolio/cake.png" alt="">
           </div>
         </div>
 
@@ -123,7 +97,7 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="{% static 'img/portfolio/circus.png' %}" alt="">
+            <img class="img-fluid" src="../../../staticfiles/img/portfolio/circus.png" alt="">
           </div>
         </div>
 
@@ -135,7 +109,7 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="{% static 'img/portfolio/game.png' %}" alt="">
+            <img class="img-fluid" src="../../../staticfiles/img/portfolio/game.png" alt="">
           </div>
         </div>
 
@@ -147,7 +121,7 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="{% static 'img/portfolio/safe.png' %}" alt="">
+            <img class="img-fluid" src="../../../staticfiles/img/portfolio/safe.png" alt="">
           </div>
         </div>
 
@@ -159,7 +133,7 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="{% static 'img/portfolio/submarine.png' %}" alt="">
+            <img class="img-fluid" src="../../../staticfiles/img/portfolio/submarine.png" alt="">
           </div>
         </div>
 
@@ -188,7 +162,7 @@
       <!-- About Section Content -->
       <div class="row">
         <div class="col-lg-4 ml-auto">
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipisicing elit Ut enim ad minim veniam, quis nostrud </p>
+          <p class="lead">Welcome to Zank! Your one stop shop to search for all things building codes. You can find ICC regulations and building codes to help you find all answers to questions for your construction endeavors.</p>
         </div>
         <div class="col-lg-4 mr-auto">
           <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit Ut enim ad minim veniam, quis nostrud exercitation ullamco.Lorem ipsum dolor sit amet.</p>
@@ -332,7 +306,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Caption</h2>
                 <!-- Icon Divider -->
                 <div class="divider-custom">
                   <div class="divider-custom-line"></div>
@@ -371,7 +345,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Caption</h2>
                 <!-- Icon Divider -->
                 <div class="divider-custom">
                   <div class="divider-custom-line"></div>
@@ -381,7 +355,7 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="{% static 'img/portfolio/cake.png' %}" alt="">
+                <img class="img-fluid rounded mb-5" src="../../../staticfiles/img/portfolio/cake.png" alt="">
                 <!-- Portfolio Modal - Text -->
                 <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
@@ -410,7 +384,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Caption</h2>
                 <!-- Icon Divider -->
                 <div class="divider-custom">
                   <div class="divider-custom-line"></div>
@@ -420,7 +394,7 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="{% static 'img/portfolio/circus.png' %}" alt="">
+                <img class="img-fluid rounded mb-5" src="../../../staticfiles/img/portfolio/circus.png" alt="">
                 <!-- Portfolio Modal - Text -->
                 <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
@@ -449,7 +423,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Caption</h2>
                 <!-- Icon Divider -->
                 <div class="divider-custom">
                   <div class="divider-custom-line"></div>
@@ -459,7 +433,7 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="{% static 'img/portfolio/game.png' %}" alt="">
+                <img class="img-fluid rounded mb-5" src="../../../staticfiles/img/portfolio/game.png" alt="">
                 <!-- Portfolio Modal - Text -->
                 <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
@@ -488,7 +462,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Caption</h2>
                 <!-- Icon Divider -->
                 <div class="divider-custom">
                   <div class="divider-custom-line"></div>
@@ -498,7 +472,7 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="{% static 'img/portfolio/safe.png' %}" alt="">
+                <img class="img-fluid rounded mb-5" src="../../../staticfiles/img/portfolio/safe.png" alt="">
                 <!-- Portfolio Modal - Text -->
                 <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
@@ -527,7 +501,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Caption</h2>
                 <!-- Icon Divider -->
                 <div class="divider-custom">
                   <div class="divider-custom-line"></div>
@@ -537,7 +511,7 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="{% static 'img/portfolio/submarine.png' %}" alt="">
+                <img class="img-fluid rounded mb-5" src="../../../staticfiles/img/portfolio/submarine.png" alt="">
                 <!-- Portfolio Modal - Text -->
                 <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
@@ -551,7 +525,6 @@
       </div>
     </div>
   </div>
-
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
@@ -567,5 +540,5 @@
   <script src="{% static 'js/freelancer.min.js' %}"></script>
 
 </body>
-
+{% block content %}
 </html>
