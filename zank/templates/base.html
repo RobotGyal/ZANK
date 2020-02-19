@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- {{ url_for('static', filename='style.css') }} -->
+<!--{# {{ url_for('static', filename='style.css') }}#} -->
 <head>
 
 
@@ -50,6 +50,11 @@
         </div>
       </div>
     </nav>
+
+    {% block content %}
+
+    
+    {% endblock %}
 
 
     <!-- Theme Scripts -->

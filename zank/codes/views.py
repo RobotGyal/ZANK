@@ -68,7 +68,7 @@ class CodeCreate(UserPassesTestMixin, CreateView):
 
     def test_func(self):
         '''Ensures the user adding the Code is an officer.'''
-        code = self.get_object()
+        # code = self.get_object()
         user = self.request.user
         return (user.is_authenticated is True and
                 user.architectorofficer.is_officer is True)
