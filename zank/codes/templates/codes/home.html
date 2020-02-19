@@ -2,6 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Theme CSS html-->
+<link href="../../../staticfiles/css/freelancer.min.css" rel="stylesheet">
+
+{% block content %}
 <body id="page-top">
 
   <!-- Header -->
@@ -9,11 +13,13 @@
     <div class="container d-flex align-items-center flex-column">
 
       <!-- Logo Image -->
-      <img class="masthead-avatar mb-5" src="../../../staticfiles/img/zank.png" alt="">
+      <img src="../../../staticfiles/img/zank.png" alt="">
 
-      <!-- Search bar Header -->
-      <input class="form-control" id="name" type="text" placeholder="Search Building Codes" required="required">
-      <a class="btn btn-xl btn-outline-light" href="results.html" role="button">Search Now!</a>
+      <!-- Search bar  -->
+      <form class="col-xs-4">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search Building Codes" aria-label="Search">
+        <button type="submit">Search</button>
+      </form>
 
       <!-- Divider -->
       <div class="divider-custom divider-light">
@@ -509,5 +515,5 @@
 
 
 </body>
-
+{% block content %}
 </html>
