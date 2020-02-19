@@ -42,4 +42,5 @@ class Code(models.Model):
 
     def get_absolute_url(self):
         '''Returns a fully qualified path for building code instance.'''
-        pass
+        path_components = {'slug': self.slug}
+        return reverse('codes:details', kwargs=path_components)
