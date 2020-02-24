@@ -16,7 +16,7 @@ urlpatterns = [
     path('codes/', CodeList.as_view(), name='reference'),
     path('codes/add-code/', CodeCreate.as_view(), name='add_code'),
     path('codes/<slug:slug>/edit/', CodeUpdate.as_view(), name='edit_code'),
-    path('codes/<slug:slug>/delete/', CodeDelete.as_view(),
+    path('codes/code/<slug:slug>/delete/', CodeDelete.as_view(),
          name='remove_code'),
     path('codes/<slug:slug>/', CodeDetail.as_view(), name='details'),
 ]
