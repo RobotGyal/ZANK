@@ -12,7 +12,7 @@ from .models import Code
 from django.contrib.auth.models import User
 from .forms import CodeForm
 import zank
-
+import simplejson as json
 
 def home(request):
     '''Render the home page of the site.'''
@@ -66,9 +66,30 @@ class CodeCreate(UserPassesTestMixin, CreateView):
         form.instance.posted_by = self.request.user
         return super().form_valid(form)
 
+    def post(self, request):
+        ''' indicate whenever a post request was made. saving '''
+        
+        form = CodeForm(request.POST)
+        if form.is_valid():
+            new_code = form.save(commit=False)
+            new_code.post_by = User.objects.get(id=request.user.id)
+            new_code.save()
+            # return HttpResponseRedirect(reverse('details', args=[new_code.slug]))
+        return render(request, 'codes/details.html')
+
+
+    
+    def get(self, request):
+        '''displaying'''
+
+
+        context = {'form': CodeForm()}
+
+        return render(request, self.template_name, context)
+
     def test_func(self):
         '''Ensures the user adding the Code is an officer.'''
-        code = self.get_object()
+        # code = self.get_object()
         user = self.request.user
         return (user.is_authenticated is True and
                 user.architectorofficer.is_officer is True)
@@ -102,3 +123,14 @@ class CodeDelete(LoginRequiredMixin, DeleteView):
         user = self.request.user
         return (user.is_authenticated is True and
                 user.architectorofficer.is_officer is True)
+    
+    def get(self, request, slug):
+        '''displaying'''
+        return render(request, 'codes/home.html')
+
+
+    def post(self, request, slug):
+        code = self.get_queryset().get(slug__iexact=slug)
+        code.delete()
+        return render(request, 'codes/home.html')
+        

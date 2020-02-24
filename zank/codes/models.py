@@ -20,7 +20,7 @@ class Code(models.Model):
         "The date and time this page was updated. " +
         "Automatically generated when the model updates.")
     )
-    posted_by = models.OneToOneField(settings.AUTH_USER_MODEL,
+    posted_by = models.OneToOneField(settings.AUTH_USER_MODEL,blank=True, null=True,
                                      on_delete=models.PROTECT
                                      )
     can_dos = models.TextField(
