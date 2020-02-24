@@ -1,23 +1,10 @@
-{% load static %}
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<!-- Theme CSS html-->
+<link href="../../../staticfiles/css/freelancer.min.css" rel="stylesheet">
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Zank Site</title>
-  <!-- Custom fonts for this theme -->
-  <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-  <link href="{% static 'css/freelancer.min.css' %}" rel="stylesheet">
-
-</head>
 {% block content %}
 <body id="page-top">
 
@@ -138,7 +125,7 @@
         </div>
 
       </div>
-      <!-- /.row -->
+      <!-- New Row -->
 
     </div>
   </section>
@@ -147,10 +134,10 @@
   <section class="page-section bg-primary text-white mb-0" id="about">
     <div class="container">
 
-      <!-- About Section Heading -->
+      <!-- About Header -->
       <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
 
-      <!-- Icon Divider -->
+      <!-- Divider -->
       <div class="divider-custom divider-light">
         <div class="divider-custom-line"></div>
         <div class="divider-custom-icon">
@@ -165,7 +152,7 @@
           <p class="lead">Welcome to Zank! Your one stop shop to search for all things building codes. You can find ICC regulations and building codes to help you find all answers to questions for your construction endeavors.</p>
         </div>
         <div class="col-lg-4 mr-auto">
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit Ut enim ad minim veniam, quis nostrud exercitation ullamco.Lorem ipsum dolor sit amet.</p>
+          <p class="lead">Zank clients come from artchetechural bakcgrounds including construction workers, ICC employees, and archetect companies.</p>
         </div>
       </div>
 
@@ -306,7 +293,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Caption</h2>
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Image Caption</h2>
                 <!-- Icon Divider -->
                 <div class="divider-custom">
                   <div class="divider-custom-line"></div>
@@ -316,7 +303,7 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="{% static 'img/portfolio/cabin.png' %}" alt="">
+                <img class="img-fluid rounded mb-5" src="img/portfolio/cabin.png" alt="">
                 <!-- Portfolio Modal - Text -->
                 <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
@@ -393,10 +380,10 @@
                   </div>
                   <div class="divider-custom-line"></div>
                 </div>
-                <!-- Portfolio Modal - Image -->
+                <!--  -->
                 <img class="img-fluid rounded mb-5" src="../../../staticfiles/img/portfolio/circus.png" alt="">
-                <!-- Portfolio Modal - Text -->
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                <!--  -->
+                <p class="mb-5"></p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                   <i class="fas fa-times fa-fw"></i>
                   Close Window
@@ -432,10 +419,10 @@
                   </div>
                   <div class="divider-custom-line"></div>
                 </div>
-                <!-- Portfolio Modal - Image -->
+                <!-- Portfolio Image -->
                 <img class="img-fluid rounded mb-5" src="../../../staticfiles/img/portfolio/game.png" alt="">
-                <!-- Portfolio Modal - Text -->
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                <!-- Image Caption -->
+                <p class="mb-5">Building codes ensure that all structures follow the same codes and each structure is safe and accessible!</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                   <i class="fas fa-times fa-fw"></i>
                   Close Window
@@ -461,8 +448,8 @@
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Caption</h2>
+                <!-- Image  -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">The International Code Council creates building regulations to maintain and enforce safety among communities.</h2>
                 <!-- Icon Divider -->
                 <div class="divider-custom">
                   <div class="divider-custom-line"></div>
@@ -471,10 +458,10 @@
                   </div>
                   <div class="divider-custom-line"></div>
                 </div>
-                <!-- Portfolio Modal - Image -->
+                <!-- Next Image (Here) -->
                 <img class="img-fluid rounded mb-5" src="../../../staticfiles/img/portfolio/safe.png" alt="">
-                <!-- Portfolio Modal - Text -->
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                <!-- Next Caption -->
+                <p class="mb-5"></p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                   <i class="fas fa-times fa-fw"></i>
                   Close Window
@@ -510,10 +497,10 @@
                   </div>
                   <div class="divider-custom-line"></div>
                 </div>
-                <!-- Portfolio Modal - Image -->
+                <!-- Portfolio Image -->
                 <img class="img-fluid rounded mb-5" src="../../../staticfiles/img/portfolio/submarine.png" alt="">
-                <!-- Portfolio Modal - Text -->
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                <!-- Caption Text -->
+                <p class="mb-5"></p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                   <i class="fas fa-times fa-fw"></i>
                   Close Window
@@ -525,19 +512,7 @@
       </div>
     </div>
   </div>
-  <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
-
-  <!-- Contact Form JavaScript -->
-  <script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
-  <script src="{% static 'js/contact_me.js' %}"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="{% static 'js/freelancer.min.js' %}"></script>
 
 </body>
 {% endblock %}

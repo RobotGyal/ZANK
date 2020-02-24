@@ -34,7 +34,7 @@ DEBUG = True # os.getenv('DEBUG')
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'zank.herokuapp.com'
+    'zank.herokuapp.com',
 ]
 
 
@@ -93,7 +93,8 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': str(os.getenv('DATABASE_PASSWORD')),
         'HOST': 'localhost',
-        'PORT': 5432
+        #changing port, original: 5432
+        'PORT': 8000,
     }
 }
 
