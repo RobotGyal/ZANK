@@ -11,7 +11,7 @@ from .views import (
 app_name = 'codes'
 
 urlpatterns = [
-    path('', home, name='home_page'),
+    path('/', home, name='home_page'),
     # view for the results/reference page (the list view)
     path('codes/', CodeList.as_view(), name='reference'),
     path('codes/add-code/', CodeCreate.as_view(), name='add_code'),
