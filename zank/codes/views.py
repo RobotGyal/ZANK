@@ -123,3 +123,14 @@ class CodeDelete(LoginRequiredMixin, DeleteView):
         user = self.request.user
         return (user.is_authenticated is True and
                 user.architectorofficer.is_officer is True)
+    
+    def get(self, request, slug):
+        '''displaying'''
+        return render(request, 'codes/home.html')
+
+
+    def post(self, request, slug):
+        code = self.get_queryset().get(slug__iexact=slug)
+        code.delete()
+        return render(request, 'codes/home.html')
+        
