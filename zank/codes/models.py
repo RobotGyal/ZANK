@@ -2,6 +2,7 @@ from django.db import models
 from accounts.models import ArchitectOrOfficer
 from django.conf import settings
 from django.utils.text import slugify
+from django.urls import reverse, reverse_lazy
 
 
 class Code(models.Model):
@@ -43,4 +44,4 @@ class Code(models.Model):
     def get_absolute_url(self):
         '''Returns a fully qualified path for building code instance.'''
         path_components = {'slug': self.slug}
-        return reverse('codes:details', kwargs=path_components)
+        return reverse('codes:detail', kwargs=path_components)
