@@ -29,12 +29,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # os.getenv('DEBUG')
+# DEBUG = os.getenv('DEBUG')
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'zank.herokuapp.com',
+    'zank.herokuapp.com'
 ]
 
 
@@ -67,7 +68,7 @@ ROOT_URLCONF = 'zank.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -93,8 +94,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': str(os.getenv('DATABASE_PASSWORD')),
         'HOST': 'localhost',
-        #changing port, original: 5432
-        'PORT': 8000,
+        'PORT': 5432
     }
 }
 
