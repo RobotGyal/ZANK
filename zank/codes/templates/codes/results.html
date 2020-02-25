@@ -30,53 +30,15 @@
 		<div></div>
 
 		</div>
+	
+		<div class="card-columns" style="column-count: 2;">
+			{% for code in codes %}
 
-	<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Result 1</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="details.html" class="btn btn-secondary">Read More</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Result 2</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="details.html" class="btn btn-secondary">Read More</a>
-      </div>
-    </div>
-  </div>
+				{% include 'partials/code_view.html' %}
 
+			{% endfor %}
+		</div>
 
-</div>
-
-
-
-<div class="row">
-
-<div class="col-sm-6">
-<div class="card">
-	<div class="card-body">
-		<h5 class="card-title">Result 1</h5>
-		<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		<a href="details.html" class="btn btn-secondary">Read More</a>
-	</div>
-</div>
-</div>
-<div class="col-sm-6">
-<div class="card">
-	<div class="card-body">
-		<h5 class="card-title">Result 2</h5>
-		<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		<a href="details.html" class="btn btn-secondary">Read More</a>
-	</div>
-</div>
-</div>
-</div>
 
 		<!-- Footer Links -->
 		<div></div><div></div>
