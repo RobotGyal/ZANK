@@ -2,6 +2,7 @@ from django.db import models
 from accounts.models import ArchitectOrOfficer
 from django.conf import settings
 from django.utils.text import slugify
+from django.urls import reverse, reverse_lazy
 
 
 class Code(models.Model):

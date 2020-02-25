@@ -1,8 +1,13 @@
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
+{% extends 'base.html' %}
+    {% block content %}
 
-<input class="btn btn-success" type="submit" value="Confirm">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+    <input class="btn btn-success" type="submit" value="Confirm">
 
 
-</form>
+    </form>
+
+    {% endblock %}
