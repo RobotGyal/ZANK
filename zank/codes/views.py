@@ -13,10 +13,13 @@ from django.contrib.auth.models import User
 from .forms import CodeForm
 import zank
 import simplejson as json
+from django.contrib import messages
 
 def home(request):
     '''Render the home page of the site.'''
-    return render(request, 'codes/home.html')
+    template_name = 'codes/home.html'
+    def get(self, request):
+        return render(request, template_name)
 
 
 class CodeList(ListView):
@@ -26,7 +29,7 @@ class CodeList(ListView):
 
     def get(self, request):
         ''' Get a list of all codes currently in the database.'''
-        codes = self.get_queryset()
+        codes = self.get_queryset().all()
         return render(request, self.template_name, {
             'codes': codes
         })
@@ -46,13 +49,22 @@ class CodeDetail(DetailView):
            Returns:
            render: a page of the Code
 
-        """
+         """
+        code = get_object_or_404(Code, slug__iexact=self.kwargs['slug'])
         code = self.get_queryset().get(slug__iexact=slug)
         context = {
             'code': code
         }
         return render(request, self.template_name, context)
 
+# class CodeUpdate(UpdateView):
+#     model = Code
+#     form_class = CodeForm
+#     template_name = 'codes/crud/update.html'
+
+#     def form_valid(self, form):
+#         form.instance.code = self.request.get('title')
+#         return super().form_valid(form)
 
 class CodeCreate(UserPassesTestMixin, CreateView):
     '''For adding new Code instances to the db.'''
@@ -108,13 +120,16 @@ class CodeUpdate(UserPassesTestMixin, UpdateView):
         user = self.request.user
         return (user.is_authenticated is True and
                 user.architectorofficer.is_officer is True)
+    
 
 
 class CodeDelete(LoginRequiredMixin, DeleteView):
     '''For removing Code instances from the db.'''
     model = Code
+    # template_name = 'codes/crud/delete.html'
     template_name = 'codes/crud/delete.html'
     success_url = reverse_lazy('codes:reference')
+    success_message = "code successfully deleted"
     queryset = Code.objects.all()
 
     def test_func(self):
@@ -126,11 +141,19 @@ class CodeDelete(LoginRequiredMixin, DeleteView):
     
     def get(self, request, slug):
         '''displaying'''
-        return render(request, 'codes/home.html')
+        code = self.get_queryset().get(slug=slug)
 
+        context = {
+            'code': code
+        }
+        return render(request, self.template_name, context)
 
-    def post(self, request, slug):
-        code = self.get_queryset().get(slug__iexact=slug)
-        code.delete()
-        return render(request, 'codes/home.html')
+    # def delete(self, request, *args, **kwargs):
+    #     messages.success(request, self.success_message)
+    #     return super().delete(request)
+
+    # def post(self, request, slug):
+    #     code = self.get_queryset().get(slug__iexact=slug)
+    #     code.delete()
+    #     return render(request, 'codes/home.html')
         

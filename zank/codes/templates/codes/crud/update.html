@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<div class="container">
-    <h2>Edit Code</h2>
-    <h3>Fill Out The Form</h3>
-    {% include 'form_template.html' %}
-        <h5><a href="{% url 'codes:reference' %}">Back to All Codes</a></h5>
-</div>
+    {% block content %}
+    <div class="container">
+        <h2>Edit Code</h2>
+        <h3>Fill Out The Form</h3>
+        {% include 'form_template.html' %}
+            <h5><a href="{% url 'codes:reference' %}">Back to All Codes</a></h5>
+    </div>
 
-{% endblock %}
+    {% endblock %}
