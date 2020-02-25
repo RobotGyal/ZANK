@@ -12,14 +12,13 @@ from .models import Code
 from django.contrib.auth.models import User
 from .forms import CodeForm
 import zank
-import simplejson as json
 from django.contrib import messages
+
 
 def home(request):
     '''Render the home page of the site.'''
     template_name = 'codes/home.html'
-    def get(self, request):
-        return render(request, template_name)
+    return render(request, template_name)
 
 
 class CodeList(ListView):
@@ -80,7 +79,7 @@ class CodeCreate(UserPassesTestMixin, CreateView):
 
     def post(self, request):
         ''' indicate whenever a post request was made. saving '''
-        
+
         form = CodeForm(request.POST)
         if form.is_valid():
             new_code = form.save(commit=False)
@@ -90,7 +89,7 @@ class CodeCreate(UserPassesTestMixin, CreateView):
         return render(request, 'codes/details.html')
 
 
-    
+
     def get(self, request):
         '''displaying'''
 
@@ -120,7 +119,7 @@ class CodeUpdate(UserPassesTestMixin, UpdateView):
         user = self.request.user
         return (user.is_authenticated is True and
                 user.architectorofficer.is_officer is True)
-    
+
 
 
 class CodeDelete(LoginRequiredMixin, DeleteView):
@@ -138,7 +137,7 @@ class CodeDelete(LoginRequiredMixin, DeleteView):
         user = self.request.user
         return (user.is_authenticated is True and
                 user.architectorofficer.is_officer is True)
-    
+
     def get(self, request, slug):
         '''displaying'''
         code = self.get_queryset().get(slug=slug)
@@ -156,4 +155,3 @@ class CodeDelete(LoginRequiredMixin, DeleteView):
     #     code = self.get_queryset().get(slug__iexact=slug)
     #     code.delete()
     #     return render(request, 'codes/home.html')
-        
