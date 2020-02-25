@@ -102,7 +102,6 @@ When and how frequent are those experiences?
 Even Deeper Questions (ad-lib)
 (Okay, thank you so much for your time Mr. Hoopes)
 
-
 **Mahram, Architectural Designer**
 
 Questions (Pre-Interview):
