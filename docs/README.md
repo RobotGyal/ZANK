@@ -1,11 +1,15 @@
 # ZANK
-The Wikipedia for building codes!
+
+**Search Engine for Building Codes**
+
+## Product
+...
 
 ## See Full Documentation 
 [Full Documentation](https://robotgyal.github.io/ZANK/#/)
 
 ## Motivation
-This project was made for the purpose of ...
+This project was made for the purpose of making it easier for Architects to get resources. By making building codes more accessbile at a no cost the process of designing, constructing, maintaining, and updating architectural structures. 
 
 ## Learning Outcomes
 * Manage Sprint Planning and Sprint Retrospectives and SCRUM to make progress on a team project and ensure the highest chances of success
@@ -30,7 +34,7 @@ Visit the live link in order to visit the site and discover full functionality!
 MVP Scope:
 Skateboard Wireframes:
 
-User Journeys:
+**User Journey:**
 
 “Hi I’m Andy the Architect and my supervisor asked me to use Zank.com to make sure my designs for the latest project were compliant with building codes. During the project I was unsure how long the hallways should be for the new building, so I looked it up on Zank.com. On Zank, there showed different results that showed me the requirements to make sure the hallway was safe for wheelchair-bound individuals, which I had never even considered! Zank saved me a lot of time in getting the project to move ahead.”
 “Hey it’s Sam, I’m currently studying to become an architect. When I look up codes on Zank, it shows me the best information! For example when I search for ‘wheelchairs’ it shows results related to the ramps needed for wheelchair people, hallways width for wheelchair accomodations, and the parking lot requirements for the spaces reserved for people with disabilities. In contrast, when I search for ‘hallways’, it shows results related to the electrical wiring requirements for the ceiling, the hallway width requirements, the wall thickness requirements, and more. Before I was always dependent on the teacher, but now with Zank I come across stuff that he never even mentioned would be a roadblock for me before!
@@ -41,21 +45,26 @@ Bicycle Wireframes:
 
 (include timestamp field)
 
-User Journeys:
+**User Journey:**
+
 “Hello I’m Jeffrey and I’m a compliance officer in the Department of Building Inspection, for the City and County of San Francisco. For years I felt like I had to be a crime-fighter. My job was just to go find whoever’s not meeting the building code, and hammer ‘em. Thanks to Zank, I am excited to take on a more collaborative role. Using Zank, I am able to leverage years of experience I have in compliance to post understandable updates to the code. I can make sure what’s posted there is plain English, so it can be quickly implemented by construction firms. And when the code gets updated, I can easily make changes so that the builders are also up-to-date. I also delete the parts we no longer use, and those parts of the code gets deleted from the site entirely.
 
-## User Journeys 
+## User Interview 
 
-Vlad, former architecture student in high school
+**Vlad, former architecture student in high school**
+
 Situation
 As an architecture student in high school, Vlad often was tasked by teachers to look up building codes as a part of making designs for his building.
+
 Insights:
 Blockers: Building codes hard to find, not online or in hard to access websites (Aleia tried and needed to pay for them) -
- Current Solutions:
+
+Current Solutions:
 Teachers (professionals more experienced than he, who were in turn relying on memory)
 Websites
 Terrible UI/UX
 Architectural books (remote resources of information)
+
 Questions left to answer:
 Who controls the regulations for building codes? And just how does their jurisdiction breakdown? 
 What are the inconsistencies in how regulators release building codes?
@@ -65,11 +74,13 @@ How comprehensive are the codes?
 What are the consequences for not meeting a requirement?
 Christopher Francisco, current college architect student
 Jeffrey Hoopes, Chairman of Swinerton Incorporated
+
 Opener questions: 
 As chairman, can you help me a lay of the land to what Swinerton does?
 Who do you tend to work with as a part of your job, for a single construction project? 
 How do those people give you feedback about how their job is going? Or is there someone else they report their obstacles to? How does an architectural designer (for instance) get support to do his or her job?
 Just based on gut feeling, how much on a scale from 1-10 would you say this business has changed since 1984?
+
 Deeper Questions:
 What are the phases of a construction project?
 Is compliance done every step of the way? Is it more concentrated at certain steps than others?
@@ -81,6 +92,7 @@ What was the resolution thereafter?
 and what did you take away from the experience?
 How has that solution been working for you?
 How, from your understanding, do the regulators come up with building codes?
+
 Last question:
 Just to make sure I’m not making unfounded assumptions: have you ever had the chance to network with the chairpersons of other construction companies?
 Do you have a gauge of how similar their experiences are to yours? 
@@ -89,22 +101,30 @@ Can you tell me about a time you learned something from one of them that helped 
 When and how frequent are those experiences?
 Even Deeper Questions (ad-lib)
 (Okay, thank you so much for your time Mr. Hoopes)
-Mahram, Architectural Designer
+
+**Mahram, Architectural Designer**
+
 Questions (Pre-Interview):
+
 Intro:
 Thanks for meeting with me Mahram! Can I ask you a little about what you do as an architectural designer?
 Please let me know at any point if a question makes you feel uncomfortable.
 Do you feel ready to continue?
+
 Starters:
 So, have you ever designed in a professional context?
+
 Openers:
 For the most recent project you worked on, how did you find out what building codes were relevant?
 How did you go about finding out what those codes were?
 Did you find out the out codes first or make the design first?
 Tell me about a mistake you’ve made in building code compliance. 
 Tell me about a person who heavily influenced your architectural education - what did they teach you about building code compliance, if anything?
-Deep-Dive (this section is just a reminder)
+
+*Deep-Dive (this section is just a reminder)*
+
 Insights (Post-Interview):
+
 Mahram has been working 2 years
 For work, she creates 3D models, does interior designs 
 In the past she has had designs rejected due to code violations
@@ -121,27 +141,34 @@ The code is divided into sections based on “features of the building”: roofs
 Before the web, people relied on books
 Not a “pre-emptive” process - I’m inferring that through schooling, most architects are just expected to be able to work around the codes and make compliant designs without much forethought - and have the experience necessary over time where they intuitively don’t make errors in following the code, and if not, to gain the experience over time on the job
 Architects tend to focus on one type of building (Mahram builds dentist offices), so day to day she doesn’t spend a lot of time (because she’s gotten so familiar over time), and that builds consistency in her workflow
+
 Code Updates
+
 Mahram was unsure how often the code was updated
 Guess was every 2 yr, but was ensure
 Has a friend who had a design rejected, due to a change in the code that made the design invalid, yet she didn’t realize the code had changed
 She thought the latest was 2018
+
 Process
+
 Checking the code usually happens in the beginning of the process
 Design development
 Pre work of the project
 “Not much” in terms of % of time, but “really crucial” to project
 Nonetheless, “really depends on the project”
+
 Questions Left to Answer:
 How tough are the consequences for not following the code on:
 The architect?
 The supervisor?
 The project as a whole?
 The company?
+
 Vladslav: says it’s not a hugely painful process of getting code rejected, the architect knows just to move on to the next project, like a baseball player needs to get over a bad game and move on to the next
 Is it possible to boil down the code to the level of plain English? 
 
-Full Transcripts:
+**Full Transcripts:**
+
 Vladyslav
 Z: Hey Vlad where you at right now?
 
