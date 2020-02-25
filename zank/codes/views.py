@@ -65,6 +65,7 @@ class CodeDetail(DetailView):
 #         form.instance.code = self.request.get('title')
 #         return super().form_valid(form)
 
+
 class CodeCreate(UserPassesTestMixin, CreateView):
     '''For adding new Code instances to the db.'''
     model = Code
@@ -85,15 +86,11 @@ class CodeCreate(UserPassesTestMixin, CreateView):
             new_code = form.save(commit=False)
             new_code.post_by = User.objects.get(id=request.user.id)
             new_code.save()
-            # return HttpResponseRedirect(reverse('details', args=[new_code.slug]))
+        # return HttpResponseRedirect(reverse('details', args=[new_code.slug]))
         return render(request, 'codes/details.html')
-
-
 
     def get(self, request):
         '''displaying'''
-
-
         context = {'form': CodeForm()}
 
         return render(request, self.template_name, context)
@@ -119,7 +116,6 @@ class CodeUpdate(UserPassesTestMixin, UpdateView):
         user = self.request.user
         return (user.is_authenticated is True and
                 user.architectorofficer.is_officer is True)
-
 
 
 class CodeDelete(LoginRequiredMixin, DeleteView):
