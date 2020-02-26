@@ -6,7 +6,10 @@
 
 
 ## Product
-...
+Welcome to Zank! Your one stop shop to search for all things building codes. You can find ICC regulations and building codes to help you find all answers to questions for your construction endeavors.
+
+Zank clients come from artchetechural bakcgrounds including construction workers, ICC employees, and archetect companies.
+
 
 ## See Full Documentation 
 [Full Documentation](https://robotgyal.github.io/ZANK/#/)
@@ -37,10 +40,15 @@ Visit the live link in order to visit the site and discover full functionality!
 ## Wireframes
 
 Entity Resource Diagram
+
 ![Image](../public/erd.png)
 
+
+
 MVC Diagram
+
 ![Image](../public/mvc.png)
+
 
 
 ## User Journey:
