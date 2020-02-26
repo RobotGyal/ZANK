@@ -2,8 +2,14 @@
 
 **Search Engine for Building Codes**
 
+![Image](../public/home.png)
+
+
 ## Product
-...
+Welcome to Zank! Your one stop shop to search for all things building codes. You can find ICC regulations and building codes to help you find all answers to questions for your construction endeavors.
+
+Zank clients come from artchetechural bakcgrounds including construction workers, ICC employees, and archetect companies.
+
 
 ## See Full Documentation 
 [Full Documentation](https://robotgyal.github.io/ZANK/#/)
@@ -29,21 +35,28 @@ This project was built with:
 
 ## How to Use
 Visit the live link in order to visit the site and discover full functionality!
+[Live Link](https://zank.herokuapp.com/)
 
-## Wireframes / User Journey
-MVP Scope:
-Skateboard Wireframes:
+## Wireframes
 
-**User Journey:**
+Entity Resource Diagram
+
+![Image](../public/erd.png)
+
+
+
+MVC Diagram
+
+![Image](../public/mvc.png)
+
+
+
+## User Journey:
 
 “Hi I’m Andy the Architect and my supervisor asked me to use Zank.com to make sure my designs for the latest project were compliant with building codes. During the project I was unsure how long the hallways should be for the new building, so I looked it up on Zank.com. On Zank, there showed different results that showed me the requirements to make sure the hallway was safe for wheelchair-bound individuals, which I had never even considered! Zank saved me a lot of time in getting the project to move ahead.”
 “Hey it’s Sam, I’m currently studying to become an architect. When I look up codes on Zank, it shows me the best information! For example when I search for ‘wheelchairs’ it shows results related to the ramps needed for wheelchair people, hallways width for wheelchair accomodations, and the parking lot requirements for the spaces reserved for people with disabilities. In contrast, when I search for ‘hallways’, it shows results related to the electrical wiring requirements for the ceiling, the hallway width requirements, the wall thickness requirements, and more. Before I was always dependent on the teacher, but now with Zank I come across stuff that he never even mentioned would be a roadblock for me before!
 Bicycle Wireframes:
 
-(edit: search bar text should actually say “Search the Code…” not “Search Codes...”
-
-
-(include timestamp field)
 
 **User Journey:**
 
@@ -104,6 +117,9 @@ Even Deeper Questions (ad-lib)
 
 **Mahram, Architectural Designer**
 
+Hear the audio transcript
+[Link](https://drive.google.com/file/d/1RSvUltuNb8mHUUBFzZMtEFjC046ABEs0/view?ts=5e5446fc)
+
 Questions (Pre-Interview):
 
 Intro:
@@ -121,7 +137,7 @@ Did you find out the out codes first or make the design first?
 Tell me about a mistake you’ve made in building code compliance. 
 Tell me about a person who heavily influenced your architectural education - what did they teach you about building code compliance, if anything?
 
-*Deep-Dive (this section is just a reminder)*
+**Deep-Dive**
 
 Insights (Post-Interview):
 
@@ -142,14 +158,14 @@ Before the web, people relied on books
 Not a “pre-emptive” process - I’m inferring that through schooling, most architects are just expected to be able to work around the codes and make compliant designs without much forethought - and have the experience necessary over time where they intuitively don’t make errors in following the code, and if not, to gain the experience over time on the job
 Architects tend to focus on one type of building (Mahram builds dentist offices), so day to day she doesn’t spend a lot of time (because she’s gotten so familiar over time), and that builds consistency in her workflow
 
-Code Updates
+**Code Updates**
 
 Mahram was unsure how often the code was updated
 Guess was every 2 yr, but was ensure
 Has a friend who had a design rejected, due to a change in the code that made the design invalid, yet she didn’t realize the code had changed
 She thought the latest was 2018
 
-Process
+**Process**
 
 Checking the code usually happens in the beginning of the process
 Design development
@@ -204,6 +220,8 @@ Alright, thanks for that insight, I haven’t looked through it yet too intensel
 Last thing for right now: was there ever a time you asked a teacher for a building code, and they gave you outdated information? Meaning the code had been changed and they didn’t realize it?
 
 
+## Competitive Landscape
+![Image](../public/landscape.png)
 
 
 
