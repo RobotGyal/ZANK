@@ -2,6 +2,9 @@
 
 **Search Engine for Building Codes**
 
+![Image](../public/home.png)
+
+
 ## Product
 ...
 
@@ -29,12 +32,18 @@ This project was built with:
 
 ## How to Use
 Visit the live link in order to visit the site and discover full functionality!
+[Live Link](https://zank.herokuapp.com/)
 
-## Wireframes / User Journey
-MVP Scope:
-Skateboard Wireframes:
+## Wireframes
 
-**User Journey:**
+Entity Resource Diagram
+![Image](../public/erd.png)
+
+MVC Diagram
+![Image](../public/mvc.png)
+
+
+## User Journey:
 
 “Hi I’m Andy the Architect and my supervisor asked me to use Zank.com to make sure my designs for the latest project were compliant with building codes. During the project I was unsure how long the hallways should be for the new building, so I looked it up on Zank.com. On Zank, there showed different results that showed me the requirements to make sure the hallway was safe for wheelchair-bound individuals, which I had never even considered! Zank saved me a lot of time in getting the project to move ahead.”
 “Hey it’s Sam, I’m currently studying to become an architect. When I look up codes on Zank, it shows me the best information! For example when I search for ‘wheelchairs’ it shows results related to the ramps needed for wheelchair people, hallways width for wheelchair accomodations, and the parking lot requirements for the spaces reserved for people with disabilities. In contrast, when I search for ‘hallways’, it shows results related to the electrical wiring requirements for the ceiling, the hallway width requirements, the wall thickness requirements, and more. Before I was always dependent on the teacher, but now with Zank I come across stuff that he never even mentioned would be a roadblock for me before!
