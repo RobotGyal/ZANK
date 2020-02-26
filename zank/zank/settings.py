@@ -139,6 +139,7 @@ USE_TZ = True
 
 # login redirects to the home page
 LOGIN_REDIRECT_URL = 'codes:home_page'
+LOGOUT_REDIRECT_URL = 'codes:home_page'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
