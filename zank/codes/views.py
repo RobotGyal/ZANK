@@ -12,11 +12,13 @@ from .models import Code
 from django.contrib.auth.models import User
 from .forms import CodeForm
 import zank
+from django.contrib import messages
 
 
 def home(request):
     '''Render the home page of the site.'''
-    return render(request, 'codes/home.html')
+    template_name = 'codes/home.html'
+    return render(request, template_name)
 
 
 class CodeList(ListView):
@@ -26,7 +28,7 @@ class CodeList(ListView):
 
     def get(self, request):
         ''' Get a list of all codes currently in the database.'''
-        codes = self.get_queryset()
+        codes = self.get_queryset().all()
         return render(request, self.template_name, {
             'codes': codes
         })
@@ -46,12 +48,22 @@ class CodeDetail(DetailView):
            Returns:
            render: a page of the Code
 
-        """
+         """
+        code = get_object_or_404(Code, slug__iexact=self.kwargs['slug'])
         code = self.get_queryset().get(slug__iexact=slug)
         context = {
             'code': code
         }
         return render(request, self.template_name, context)
+
+# class CodeUpdate(UpdateView):
+#     model = Code
+#     form_class = CodeForm
+#     template_name = 'codes/crud/update.html'
+
+#     def form_valid(self, form):
+#         form.instance.code = self.request.get('title')
+#         return super().form_valid(form)
 
 
 class CodeCreate(UserPassesTestMixin, CreateView):
@@ -66,9 +78,26 @@ class CodeCreate(UserPassesTestMixin, CreateView):
         form.instance.posted_by = self.request.user
         return super().form_valid(form)
 
+    def post(self, request):
+        ''' indicate whenever a post request was made. saving '''
+
+        form = CodeForm(request.POST)
+        if form.is_valid():
+            new_code = form.save(commit=False)
+            new_code.post_by = User.objects.get(id=request.user.id)
+            new_code.save()
+        # return HttpResponseRedirect(reverse('details', args=[new_code.slug]))
+        return render(request, 'codes/details.html')
+
+    def get(self, request):
+        '''displaying'''
+        context = {'form': CodeForm()}
+
+        return render(request, self.template_name, context)
+
     def test_func(self):
         '''Ensures the user adding the Code is an officer.'''
-        code = self.get_object()
+        # code = self.get_object()
         user = self.request.user
         return (user.is_authenticated is True and
                 user.architectorofficer.is_officer is True)
@@ -92,8 +121,10 @@ class CodeUpdate(UserPassesTestMixin, UpdateView):
 class CodeDelete(LoginRequiredMixin, DeleteView):
     '''For removing Code instances from the db.'''
     model = Code
+    # template_name = 'codes/crud/delete.html'
     template_name = 'codes/crud/delete.html'
     success_url = reverse_lazy('codes:reference')
+    success_message = "code successfully deleted"
     queryset = Code.objects.all()
 
     def test_func(self):
@@ -102,3 +133,21 @@ class CodeDelete(LoginRequiredMixin, DeleteView):
         user = self.request.user
         return (user.is_authenticated is True and
                 user.architectorofficer.is_officer is True)
+
+    def get(self, request, slug):
+        '''displaying'''
+        code = self.get_queryset().get(slug=slug)
+
+        context = {
+            'code': code
+        }
+        return render(request, self.template_name, context)
+
+    # def delete(self, request, *args, **kwargs):
+    #     messages.success(request, self.success_message)
+    #     return super().delete(request)
+
+    # def post(self, request, slug):
+    #     code = self.get_queryset().get(slug__iexact=slug)
+    #     code.delete()
+    #     return render(request, 'codes/home.html')

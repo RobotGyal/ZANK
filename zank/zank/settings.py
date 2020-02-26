@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from dotenv import load_dotenv
-# import django_heroku
+import django_heroku
 import dj_database_url
 from django.urls import reverse
 load_dotenv()
@@ -30,6 +30,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
+# DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -67,7 +68,9 @@ ROOT_URLCONF = 'zank.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -162,4 +165,4 @@ db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 
 # more help with deployment
-# django_heroku.settings(locals())
+django_heroku.settings(locals())

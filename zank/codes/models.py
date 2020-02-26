@@ -2,6 +2,7 @@ from django.db import models
 from accounts.models import ArchitectOrOfficer
 from django.conf import settings
 from django.utils.text import slugify
+from django.urls import reverse, reverse_lazy
 
 
 class Code(models.Model):
@@ -20,7 +21,7 @@ class Code(models.Model):
         "The date and time this page was updated. " +
         "Automatically generated when the model updates.")
     )
-    posted_by = models.OneToOneField(settings.AUTH_USER_MODEL,
+    posted_by = models.OneToOneField(settings.AUTH_USER_MODEL,blank=True, null=True,
                                      on_delete=models.PROTECT
                                      )
     can_dos = models.TextField(
