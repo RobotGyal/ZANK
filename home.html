@@ -1,11 +1,61 @@
-{% extends 'base.html' %}
 <!DOCTYPE html>
+<html>
 
-{% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Zank</title>
+    <!-- Custom Fonts -->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="{% static 'css/freelancer.min.css' %}" rel="stylesheet">
+
+</head>
+
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Zank</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Reference</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+            {% if not user.is_authenticated %}
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Login</a>
+            </li>
+
+            {% else %}
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Logout</a>
+            </li>
+
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
   <!-- Header Image -->
   <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
-      <img class="masthead-avatar mb-5" src="img/zank.png" alt="">
+      <img class="masthead-avatar mb-5" src="img/{{zank.png}}" alt="">
 
       <!-- Header Text-->
       <h1 class="masthead-heading text-uppercase mb-0">Search Building Codes</h1>
@@ -18,7 +68,9 @@
         <div class="divider-custom-icon">
           <i class="fas fa-star"></i>
         </div>
+          <!-- Second Header Area -->
         <div class="divider-custom-line"></div>
+        <link href="{% static 'css/freelancer.min.css' %}" rel="stylesheet">
       </div>
 
     </div>
@@ -111,7 +163,10 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/pic5.png" alt="">
+            <img class="img-fluid" src="img/portfolio/cabin.png" alt="">
+            <!-- Portfolio section image -->
+          <div class="divider-custom-line"></div>
+          <link href="{% static 'css/freelancer.min.css' %}" rel="stylesheet">
           </div>
         </div>
 
@@ -134,7 +189,9 @@
         </div>
         <div class="divider-custom-line"></div>
       </div>
-
+      <!-- Portfolio section image -->
+    <div class="divider-custom-line"></div>
+    <link href="{% static 'css/freelancer.min.css' %}" rel="stylesheet">
       <!-- About Section -->
       <div class="row">
         <div class="col-lg-4 ml-auto">
@@ -501,5 +558,5 @@
       </div>
     </div>
   </div>
-{% endblock %}
+
 </html>
