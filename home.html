@@ -56,7 +56,9 @@
   <!-- Header Image -->
   <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
-      <img src="{{url_for('img', filename='zank.png')}}"/>
+    {% block content %}
+    <img src="{{ static('staticfiles/img/zank.png') }}" alt=""/>
+    {% endblock %}
 
       <!-- Header Text-->
       <h1 class="masthead-heading text-uppercase mb-0">Search Building Codes</h1>
