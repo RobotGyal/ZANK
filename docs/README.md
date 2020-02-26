@@ -204,7 +204,7 @@ Last thing for right now: was there ever a time you asked a teacher for a buildi
 
 
 ## Competitive Landscape
-![Image](../../public/landscape.png)
+![Image](../public/landscape.png)
 
 
 
