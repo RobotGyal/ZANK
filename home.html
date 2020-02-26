@@ -40,14 +40,13 @@
             </li>
             {% if not user.is_authenticated %}
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Login</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'accounts:login' %}">Login</a>
             </li>
 
             {% else %}
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Logout</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'accounts:logout' %}">Logout</a>
             </li>
-
             {% endif %}
           </ul>
         </div>
@@ -95,10 +94,10 @@
         <div class="divider-custom-line"></div>
       </div>
 
-      <!-- Portfolio Grid Items -->
+      <!-- Reference Grid Items -->
       <div class="row">
 
-        <!-- Portfolio Item 1 -->
+        <!-- Reference Item 1 -->
         <div class="col-md-6 col-lg-4">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -110,7 +109,7 @@
           </div>
         </div>
 
-        <!-- Portfolio Item 2 -->
+        <!-- Reference Item 2 -->
         <div class="col-md-6 col-lg-4">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -122,7 +121,7 @@
           </div>
         </div>
 
-        <!-- Portfolio Item 3 -->
+        <!-- Reference Item 3 -->
         <div class="col-md-6 col-lg-4">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -130,11 +129,11 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/pic2.png" alt="">
+            <img class="img-fluid" src="img/portfolio/constructionImg2.png" alt="">
           </div>
         </div>
 
-        <!-- Portfolio Item 4 -->
+        <!-- Reference Item 4 -->
         <div class="col-md-6 col-lg-4">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -146,7 +145,7 @@
           </div>
         </div>
 
-        <!-- Portfolio Item 5 -->
+        <!-- Reference Item 5 -->
         <div class="col-md-6 col-lg-4">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -158,7 +157,7 @@
           </div>
         </div>
 
-        <!-- Portfolio Item 6 -->
+        <!-- Reference Item 6 -->
         <div class="col-md-6 col-lg-4">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -166,8 +165,8 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/cabin.png" alt="">
-            <!-- Portfolio section image -->
+            <img class="img-fluid" src="img/portfolio/constructionImg3.png" alt="">
+            <!-- Reference section image -->
           <div class="divider-custom-line"></div>
           <link href="{% static 'css/freelancer.min.css' %}" rel="stylesheet">
           </div>
@@ -202,7 +201,7 @@
           <p class="lead">Zank is you're one stop shop for all things building codes. Search for cities and find their corresponding ICC Regulations. </p>
         </div>
         <div class="col-lg-4 mr-auto">
-          <p class="lead">Create search queries to find information on building information. Get all the info you need! </p>
+          <p class="lead">Create search queries to find information on building information. Get all the info you need--! </p>
         </div>
       </div>
 
@@ -352,9 +351,9 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="img/portfolio/cabin.png" alt="">
+                <img class="img-fluid rounded mb-5" src="img/portfolio/constructionImg4.png" alt="">
                 <!-- Portfolio Modal - Text -->
-                <p class="mb-5">(Portfolio item explanation here) </p>
+                <p class="mb-5">Construction Site Image</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                   <i class="fas fa-times fa-fw"></i>
                   Close Window
@@ -381,7 +380,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Image Caption</h2>
                 <!-- Icon Divider -->
                 <div class="divider-custom">
                   <div class="divider-custom-line"></div>
@@ -393,7 +392,7 @@
                 <!-- Portfolio Modal - Image -->
                 <img class="img-fluid rounded mb-5" src="img/portfolio/cake.png" alt="">
                 <!-- Portfolio Modal - Text -->
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                <p class="mb-5">Construction Image Caption</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                   <i class="fas fa-times fa-fw"></i>
                   Close Window
@@ -420,7 +419,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Construction Site</h2>
                 <!-- Icon Divider -->
                 <div class="divider-custom">
                   <div class="divider-custom-line"></div>
@@ -432,7 +431,7 @@
                 <!-- Portfolio Modal - Image -->
                 <img class="img-fluid rounded mb-5" src="img/portfolio/circus.png" alt="">
                 <!-- Portfolio Modal - Text -->
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                <p class="mb-5">Construction Site Image for references on home page</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                   <i class="fas fa-times fa-fw"></i>
                   Close Window
