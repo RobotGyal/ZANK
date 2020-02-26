@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+    <div class="container">
+        <h2>Deleting Code: {{ code.title }}</h2>
+        <h3>Confirm Deletion?</h3>
+        {% include 'form_template.html' %}
+            <h5><a href="{% url 'codes:reference' %}">Back to All Codes</a></h5>
+    </div>
+
+    {% endblock %}

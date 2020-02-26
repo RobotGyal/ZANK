@@ -1,47 +1,49 @@
+{% extends 'base.html' %}
 
-<html lang="en">
-	<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% block content %}
 
+<div class="container">
+<h1>{{code.title}}</h1>
 
-	<!-- Bootstrap CSS -->
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-			<link href="css/freelancer.min.css" rel="stylesheet">
-		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		</head>
+<p> {{code.description}}</p>
 
-		<body style="background-color:#B85750;">
-	    <nav class="navbar navbar-dark bg-dark">
-				<a class="navbar-brand" href="../home.html">Zank</a>
-				<form class="form-inline my-2 my-lg-0">
-	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-	      <button class="btn btn-secondary" href="results.html" type="submit">Search</button>
-	    </form>
+</div>
 
-				</nav>
-		<div class="jumbotron text-center">
-		  <h1>Test Details Page</h1>
-		  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-			<a class="btn btn-secondary" href="../home.html" role="button">Back to Home Page</a>
-		</div>
-
-		<div class="text-center">
-		    <div>
-		      <h3>More Details</h3>
-		      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-		    </div>
-
-		  </div>
-
-		</body>
-
-		<!-- Footer Links -->
-			<div class="footer-copyright text-center py-3">© 2019 Copyright:
-				<a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+<div>
+	<div class="row">
+	  <div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+					<div class="card-title"><h3>DOs</h3>
+					<div class="card-text">{{code.can_dos}}
+					</div>
+					</div>
+				</div>
 			</div>
+	    </div>
+	  </div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+					<div class="card-title"><h3>DONTs</h3>
+					<div class="card-text">{{code.cannot_dos}}
+					</div>
+					</div>
+				</div>
+			</div>
+</div>
 
-		</html>
+<div>
+{% if user.is_authenticated and user.architectorofficer.is_officer is True %}
+<div class="row">
+<a class="mr-5"href="{% url 'codes:edit_code' code.slug %}">Update This Code</a>
+<a href="{% url 'codes:remove_code' code.slug %}">Delete This Code</a>
+</div>
+{% endif %}
+
+</div>
+
+
+
+	{% endblock %}

@@ -10,5 +10,5 @@ class CodeForm(forms.ModelForm):
             'slug',
             'date_posted',
             'last_revised',
-            'posted_by'
+            'posted_by',
         ]

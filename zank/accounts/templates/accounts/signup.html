@@ -1,87 +1,93 @@
-<!-- body for the signup page form -->
+{% extends 'base.html' %}
+    {% block content %}
 
-<!-- credit to Zain Raza's source code for Travelly, at https://travelly-zr.herokuapp.com/signup/ -->
-<div class="container">
-    <h3>Please help me figure out a header to put here later</h3>
-    <hr>
-    <div class="row mb-10">
-        <div class="col">
-            <!-- Form to sign up for a nee account -->
-            <form method="post" class="mx-auto">
-                <input type="hidden" name="csrfmiddlewaretoken" value="JWpDxIqd0XAypXZ0N68FkmuX3HKCFTqW2ZsEr66JI5A6hC2XyIbBBY2CIajUOIxx">
+  <!-- body for the signup page form -->
 
-                    <!-- Email address field -->
-                    <div class="form-group row">
-                        <div class="col-8">
-                          <label for="id_email">Email Address:</label>
-                          <p class="form"></p>
-                          <input class="form-control" type="text" name="email" id="id_email" required>
-                        </div>
-                    </div>
+  <!-- credit to Zain Raza's source code for Travelly, at https://travelly-zr.herokuapp.com/signup/ -->
+  <div class="container">
+      <h3>Please help me figure out a header to put here later</h3>
+      <hr>
+      <div class="row mb-10">
+          <div class="col">
+              <!-- Form to sign up for a nee account -->
+              <form method="post" class="mx-auto">
+                  {% csrf_token %}
+                  <!--<input type="hidden" name="csrfmiddlewaretoken" value="JWpDxIqd0XAypXZ0N68FkmuX3HKCFTqW2ZsEr66JI5A6hC2XyIbBBY2CIajUOIxx"> -->
 
-                    <!-- Username field -->
-                    <div class="form-group row">
-                        <div class="col-8">
-                          <label for="id_username">Username:</label>
-                          <p class="form">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</p>
-                          <input class="form-control" type="text" name="username" id="id_username" required>
-                        </div>
-                    </div>
+                      <!-- Email address field -->
+                      <div class="form-group row">
+                          <div class="col-8">
+                            <label for="id_email">Email Address:</label>
+                            <p class="form"></p>
+                            <input class="form-control" type="text" name="email" id="id_email" required>
+                          </div>
+                      </div>
 
-                    <!-- first name field -->
-                    <div class="form-group row">
-                        <div class="col-8">
-                          <label for="id_first_name">First Name:</label>
-                          <p class="form"></p>
-                          <input class="form-control" type="text" name="first_name" id="id_first_name" required>
-                        </div>
-                    </div>
+                      <!-- Username field -->
+                      <div class="form-group row">
+                          <div class="col-8">
+                            <label for="id_username">Username:</label>
+                            <p class="form">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</p>
+                            <input class="form-control" type="text" name="username" id="id_username" required>
+                          </div>
+                      </div>
 
-                    <!-- last name field -->
-                    <div class="form-group row">
-                        <div class="col-8">
-                          <label for="id_last_name">Last Name:</label>
-                          <p class="form"></p>
-                          <input class="form-control" type="text" name="last_name" id="id_last_name" required>
-                        </div>
-                    </div>
+                      <!-- first name field -->
+                      <div class="form-group row">
+                          <div class="col-8">
+                            <label for="id_first_name">First Name:</label>
+                            <p class="form"></p>
+                            <input class="form-control" type="text" name="first_name" id="id_first_name" required>
+                          </div>
+                      </div>
 
-                    <!-- password field -->
-                    <div class="form-group row">
-                        <div class="col-8">
-                          <label for="id_password1">Password:</label>
-                          <p class="form"><ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></p>
-                          <input class="form-control" type="password" name="password1" id="id_password1" required>
-                        </div>
-                    </div>
+                      <!-- last name field -->
+                      <div class="form-group row">
+                          <div class="col-8">
+                            <label for="id_last_name">Last Name:</label>
+                            <p class="form"></p>
+                            <input class="form-control" type="text" name="last_name" id="id_last_name" required>
+                          </div>
+                      </div>
 
-                    <!-- confirm password field -->
-                    <div class="form-group row">
-                        <div class="col-8">
-                          <label for="id_password2">Password Confirmation:</label>
-                          <p class="form">Enter the same password as before, for verification.</p>
-                          <input class="form-control" type="password" name="password2" id="id_password2" required>
-                        </div>
-                    </div>
+                      <!-- password field -->
+                      <div class="form-group row">
+                          <div class="col-8">
+                            <label for="id_password1">Password:</label>
+                            <p class="form"><ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></p>
+                            <input class="form-control" type="password" name="password1" id="id_password1" required>
+                          </div>
+                      </div>
 
-                    <!-- is_officer field -->
-                    <div class="form-group row">
-                        <div class="col-8">
-                          <label for="id_is_officer">Are You an Archtect or Compliance Officer?</label>
-                          <p class="form">Please check off how you will be using ZANK.</p>
-                          <label>
-                              <input class="form-control" type="radio" name="is_officer" id="id_last_name" value="architect" required>Architect
-                          </label>
-                          <label>
-                              <input class="form-control" type="radio" name="is_officer" id="id_last_name" value="officer" required>Officer
-                          </label>
-                        </div>
-                    </div>
+                      <!-- confirm password field -->
+                      <div class="form-group row">
+                          <div class="col-8">
+                            <label for="id_password2">Password Confirmation:</label>
+                            <p class="form">Enter the same password as before, for verification.</p>
+                            <input class="form-control" type="password" name="password2" id="id_password2" required>
+                          </div>
+                      </div>
 
-                <button type="submit" class="btn btn-success">Create New Account</button>
-            </form>
-            <br>
-        </div>
-    </div>
-    <br>
-</div>
+                      <!-- is_officer field -->
+                      <div class="form-group row">
+                          <div class="col-8">
+                            <label for="id_is_officer">Are You an Archtect or Compliance Officer?</label>
+                            <p class="form">Please check off how you will be using ZANK.</p>
+                            <label>
+                                <input class="form-control" type="radio" name="is_officer" id="id_last_name" value="architect" required>Architect
+                            </label>
+                            <label>
+                                <input class="form-control" type="radio" name="is_officer" id="id_last_name" value="officer" required>Officer
+                            </label>
+                          </div>
+                      </div>
+
+                  <button type="submit" class="btn btn-success">Create New Account</button>
+              </form>
+              <br>
+          </div>
+      </div>
+      <br>
+  </div>
+
+  {% endblock %}
