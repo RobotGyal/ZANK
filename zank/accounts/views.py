@@ -5,8 +5,10 @@ from django.urls import reverse, reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.models import User
 from django.contrib.auth import views as auth_views
+from django.views.generic.detail import (DetailView)
 from django.views.generic.edit import (
     CreateView
+    # UserProfile
 )
 
 
@@ -25,4 +27,7 @@ class SignUpView(SuccessMessageMixin, CreateView):
                                                                  is_officer=False)
         architect_or_officer.save()
         return super().form_valid(form)
+
+class UserProfile(DetailView):
+    pass
     
