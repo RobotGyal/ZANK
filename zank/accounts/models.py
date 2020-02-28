@@ -9,7 +9,7 @@ class ArchitectOrOfficer(models.Model):
     '''A specific type of User - may be a government official or architect.'''
     user = models.OneToOneField(settings.AUTH_USER_MODEL,
                                 on_delete=models.CASCADE)
-    is_officer = models.BooleanField(help_text="How will you use ZANK?")
+    is_officer = models.BooleanField(help_text="How will you use ZANK?", default=False)
 
     def __str__(self):
         '''Return the related User's username.'''
