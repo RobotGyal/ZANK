@@ -1,0 +1,29 @@
+
+  body{
+		background-color: #B85750;
+		font-family: 'Roboto', sans-serif;
+	}
+	.login-form {
+		width: 340px;
+    	margin: 50px auto;
+	}
+    .login-form form {
+    	margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: #B85750;
+        padding: 30px;
+    }
+    .login-form h2 {
+        margin: 0 0 15px;
+    }
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+        border-color: #B85750;
+    }
+    .btn {
+        font-size: 15px;
+        font-weight: bold;
+        background: #B85750 !important;
+    }
+  </style>
