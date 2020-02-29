@@ -1,4 +1,4 @@
-
+{% load static %}
 <!-- templates/base.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +14,12 @@
     <title>Zank</title>
 
     <!-- Custom Fonts -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
-    <link href="staticfiles/css/freelancer.min.css" rel="stylesheet">
+    <link href="{% static 'css/freelancer.min.css' %}" rel="stylesheet">
 
   <title>{% block title %}Zank{% endblock %}</title>
 
