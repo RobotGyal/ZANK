@@ -2,47 +2,43 @@
 
 {% block content %}
 
-<div class="container">
-<h1>{{code.title}}</h1>
+	<div class="container mt-5">
+		<h1>{{code.title}}</h1>
 
-<p> {{code.description}}</p>
-</div>
-
-<div>
-	<div class="row">
-	  <div class="col-sm-6">
-				<div class="card">
-					<div class="card-body">
-					<div class="card-title"><h3>DOs</h3>
-					<div class="card-text">{{code.can_dos}}
-					</div>
-					</div>
-				</div>
-			</div>
-	    </div>
-	  </div>
-		<div class="row">
+		<!-- DO and DON'T's section -->
+		<div class="row mb-3">
 			<div class="col-sm-6">
 				<div class="card">
 					<div class="card-body">
-					<div class="card-title"><h3>DONTs</h3>
-					<div class="card-text">{{code.cannot_dos}}
-					</div>
+						<div class="card-title"><h3>DO's</h3></div>
+						<div class="card-text">{{code.can_dos}}</div>
 					</div>
 				</div>
 			</div>
-</div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+						<div class="card-title"><h3>DON'T's</h3></div>
+						<div class="card-text">{{code.cannot_dos}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-<div>
-{% if user.is_authenticated and user.architectorofficer.is_officer is True %}
-<div class="row">
-<a class="mr-5"href="{% url 'codes:edit_code' code.slug %}">Update This Code</a>
-<a href="{% url 'codes:remove_code' code.slug %}">Delete This Code</a>
-</div>
-{% endif %}
+		<!-- Description Section -->
+		<h3>Description</h3>
+			<p>{{code.description}}</p>
+		{% if user.is_authenticated and user.architectorofficer.is_officer is True %}
+			<div class="row ml-5">
+				<a class="btn btn-primary mr-5" href="{% url 'codes:edit_code' code.slug %}">Update This Code</a>
+				<a class="btn btn-warning" href="{% url 'codes:remove_code' code.slug %}">Delete This Code</a>
+			</div>
+		{% endif %}
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 
-</div>
-
-
-
-	{% endblock %}
+{% endblock %}
