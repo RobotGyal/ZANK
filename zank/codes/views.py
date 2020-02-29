@@ -28,7 +28,7 @@ class CodeList(ListView):
 
     def get(self, request):
         ''' Get a list of all codes currently in the database.'''
-        codes = self.get_queryset().all()
+        codes = self.get_queryset().filter(is_visible=True)
         return render(request, self.template_name, {
             'codes': codes
         })
@@ -104,7 +104,7 @@ class CodeDelete(LoginRequiredMixin, DeleteView):
     model = Code
     template_name = 'codes/crud/delete.html'
     success_url = reverse_lazy('codes:reference')
-    success_message = "code successfully deleted"
+    success_message = "code successfully archived"
     queryset = Code.objects.all()
 
     def test_func(self):
@@ -122,3 +122,10 @@ class CodeDelete(LoginRequiredMixin, DeleteView):
             'code': code
         }
         return render(request, self.template_name, context)
+
+    def delete(self, request, *args, **kwargs):
+        '''hiding code'''
+        self.object = self.get_object()
+        success_url = self.get_success_url()
+        self.object.is_visible = False
+        return HttpResponseRedirect(success_url)

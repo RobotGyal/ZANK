@@ -12,9 +12,21 @@
               <!-- Form to sign up for a nee account -->
               <form method="post" class="mx-auto">
                   {% csrf_token %}
-                  <!--<input type="hidden" name="csrfmiddlewaretoken" value="JWpDxIqd0XAypXZ0N68FkmuX3HKCFTqW2ZsEr66JI5A6hC2XyIbBBY2CIajUOIxx"> -->
+                    {% for field in form %}
+                      {% for error in field.errors %}
+                          <p class="text-danger">{{ error }}</p>
+                      {% endfor %}
+                      <div class="form-group row">
+                          <div class="col-8">
+                            <label for="id_{{ field.name }}">{{ field.label|title }}:</label>
+                            <p class="form">{{ field.help_text }}</p>
+                            <input class="form-control" type="{% if 'password' in field.name %}password{% else %}text{% endif %}" name="{{ field.name }}" id="id_{{ field.name }}" required>
+                          </div>
+                      </div>
+                    {% endfor %}
+                  <!--{#
 
-                      <!-- Email address field -->
+                      <!-- Email address field 
                       <div class="form-group row">
                           <div class="col-8">
                             <label for="id_email">Email Address:</label>
@@ -23,7 +35,7 @@
                           </div>
                       </div>
 
-                      <!-- Username field -->
+                      <!-- Username field 
                       <div class="form-group row">
                           <div class="col-8">
                             <label for="id_username">Username:</label>
@@ -32,7 +44,7 @@
                           </div>
                       </div>
 
-                      <!-- first name field -->
+                      <!-- first name field 
                       <div class="form-group row">
                           <div class="col-8">
                             <label for="id_first_name">First Name:</label>
@@ -41,7 +53,7 @@
                           </div>
                       </div>
 
-                      <!-- last name field -->
+                      <!-- last name field 
                       <div class="form-group row">
                           <div class="col-8">
                             <label for="id_last_name">Last Name:</label>
@@ -50,7 +62,7 @@
                           </div>
                       </div>
 
-                      <!-- password field -->
+                      <!-- password field 
                       <div class="form-group row">
                           <div class="col-8">
                             <label for="id_password1">Password:</label>
@@ -59,7 +71,7 @@
                           </div>
                       </div>
 
-                      <!-- confirm password field -->
+                      <!-- confirm password field 
                       <div class="form-group row">
                           <div class="col-8">
                             <label for="id_password2">Password Confirmation:</label>
@@ -68,7 +80,7 @@
                           </div>
                       </div>
 
-                      <!-- is_officer field -->
+                      <!-- is_officer field 
                       <div class="form-group row">
                           <div class="col-8">
                             <label for="id_is_officer">Are You an Archtect or Compliance Officer?</label>
@@ -80,7 +92,7 @@
                                 <input class="form-control" type="radio" name="is_officer" id="id_last_name" value="officer" required>Officer
                             </label>
                           </div>
-                      </div>
+                      </div>#}-->
 
                   <button type="submit" class="btn btn-success">Create New Account</button>
               </form>
