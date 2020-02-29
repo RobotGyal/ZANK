@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-body">
     <h5 class="card-title">{{ code.title }}</h5>
-    <p class="card-text">{{ code.description }}</p>
+    <p class="card-text">{{ code.description|truncatewords_html:30 }}</p>
     <a href="{% url 'codes:details' code.slug %}" class="btn btn-secondary">Read More</a>
     </div>
 </div>
