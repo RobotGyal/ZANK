@@ -23,11 +23,21 @@
             <br>
 	        <a class="btn btn-secondary" href="../home.html" role="button">Home Page</a>
 	    </div>
-    <!-- LIST OF CODES -->
+    <!-- LIST OF CODES (that haven't beeen "archived") -->
+        <!-- success message after deletion redirect -- >
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <p{% if message.tags %} class="{{ message.tags }} alert alert-success"{% endif %}>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
         <div class="container">
             <div class="card-columns" style="column-count: 2;">
 		    	{% for code in codes %}
-			    	{% include 'partials/code_view.html' %}
+                    {% if code.is_visible %}
+			    	    {% include 'partials/code_view.html' %}
+                    {% endif %}
 		    	{% endfor %}
 		    </div>
         </div>

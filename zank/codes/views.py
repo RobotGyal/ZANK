@@ -69,7 +69,6 @@ class CodeCreate(UserPassesTestMixin, CreateView):
         form.instance.posted_by = self.request.user
         return super().form_valid(form)
 
-
     def get(self, request):
         '''displaying'''
         context = {'form': CodeForm()}
@@ -128,4 +127,5 @@ class CodeDelete(LoginRequiredMixin, DeleteView):
         self.object = self.get_object()
         success_url = self.get_success_url()
         self.object.is_visible = False
+        self.object.save()
         return HttpResponseRedirect(success_url)
