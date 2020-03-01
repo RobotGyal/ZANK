@@ -1,7 +1,9 @@
+from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 import django.contrib.auth.forms as auth_forms
+from .models import ArchitectOrOfficer
 
 # credit for subclassing UserCreationForm belongs to
 # https://overiq.com/django-1-10/django-creating-users-using-usercreationform/
@@ -27,3 +29,10 @@ class SignUpForm(UserCreationForm):
             user.save()
 
         return user
+
+
+class StatusForm(forms.ModelForm):
+    '''A form for users confirming status as an officer.'''
+    class Meta:
+        model = ArchitectOrOfficer
+        fields = ['is_officer']

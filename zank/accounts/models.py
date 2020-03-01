@@ -9,16 +9,17 @@ class ArchitectOrOfficer(models.Model):
     '''A specific type of User - may be a government official or architect.'''
     user = models.OneToOneField(settings.AUTH_USER_MODEL,
                                 on_delete=models.CASCADE)
-    is_officer = models.BooleanField(help_text="How will you use ZANK?", default=False)
+    is_officer = models.BooleanField(help_text=(
+        "True if you are a government compliance officer, and false otherwise."
+    ),
+                                     default=False)
 
     def __str__(self):
         '''Return the related User's username.'''
         type = "Officer" if self.is_officer is True else "Architect"
         return f"{self.user.username} the {type}"
 
-    """
     def get_absolute_url(self):
         '''Returns a fully qualified path for user profile.'''
         path_components = {'pk': self.user.id}
-        return reverse('accounts:user_info', kwargs=path_components)
-    """
+        return reverse('accounts:user-profile', kwargs=path_components)
