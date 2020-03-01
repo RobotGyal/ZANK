@@ -1,0 +1,25 @@
+<!-- zank/accounts/templates/accounts/profile.html -->
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container">
+        <br>
+        <h1>Account for {{ user.username }}</h1>
+        <br>
+        <!-- User Info -->
+        <h3>Account Details:</h3>
+        <br>
+        <p><strong>First Name</strong>: {% if user.first_name %}{{ user.first_name }}{% else %} UNAVAILABLE {% endif %}</p>
+        <p><strong>Last Name</strong>: {% if user.last_name %}{{ user.last_name }}{% else %} UNAVAILABLE {% endif %}</p>
+        <p><strong>Email</strong>: {% if user.email %}{{ user.email }}{% else %} UNAVAILABLE {% endif %}</p>
+        <p><strong>Status</strong>: {% if status.is_officer %}Compliance Officer{% else %}Architect{% endif %}</p>
+        <br>
+        <!-- Links to Change Profile Info, or Delete Account -->
+        <div class="row">
+            <a class="btn btn-info mr-5" href="#">Update Status</a>
+            <a href="#" class="btn btn-danger">Delete Account</a>
+        </div>
+    </div>
+
+{% endblock %}
