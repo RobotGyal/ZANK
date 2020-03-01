@@ -36,27 +36,29 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#reference">Reference</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'codes:reference' %}">Reference</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
-            </li>
             <!-- user sees button to login if anonymous -->
             {% if not user.is_authenticated %}
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'accounts:login' %}">Login</a>
-            </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                  <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'accounts:login' %}">Login</a>
+                </li>
             <!-- user sees button to logout, or see profile if they are logged in -->
             {% else %}
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'accounts:logout' %}">Logout</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'accounts:user-profile' user.id %}">Profile</a>
-            </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                  <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'accounts:logout' %}">Logout</a>
+                </li>
+                    {% if user.architectorofficer.is_officer %}
+                        <li class="nav-item mx-0 mx-lg-1">
+                          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'codes:add_code' %}">Add Code</a>
+                        </li>
+                    {% endif %}
+                <li class="nav-item mx-0 mx-lg-1">
+                  <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'accounts:user-profile' user.id %}">Profile</a>
+                </li>
             {% endif %}
           </ul>
         </div>
