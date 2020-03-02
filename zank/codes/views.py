@@ -25,10 +25,11 @@ class CodeList(ListView):
     '''For showing the reference of all codes, or just ones based on search.'''
     model = Code
     template_name = 'codes/results.html'
+    queryset = Code.objects.all()
 
     def get(self, request):
         ''' Get a list of all codes currently in the database.'''
-        codes = self.get_queryset().filter(is_visible=True)
+        codes = self.queryset.filter(is_visible=True)
         return render(request, self.template_name, {
             'codes': codes
         })
