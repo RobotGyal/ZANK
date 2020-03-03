@@ -8,7 +8,7 @@ from .views import (
 
 app_name = 'accounts'
 # include a url pattern for the login Page
-# include a url pattewrn for the signup page
+# include a url pattern for the signup page
 
 urlpatterns = [
     path('signup/', SignUpView.as_view(), name="signup"),
@@ -18,7 +18,7 @@ urlpatterns = [
     path('logout/',
          auth_views.LogoutView.as_view(),
          name="logout"),
-    path('accounts/<int:pk>/',
+    path('profile/<int:pk>/',
          UserProfile.as_view(),
          name="user-profile"),
 ]
