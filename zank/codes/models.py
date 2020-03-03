@@ -21,15 +21,17 @@ class Code(models.Model):
         "The date and time this page was updated. " +
         "Automatically generated when the model updates.")
     )
-    posted_by = models.OneToOneField(settings.AUTH_USER_MODEL,blank=True, null=True,
-                                     on_delete=models.PROTECT
-                                     )
+    posted_by = models.ForeignKey(settings.AUTH_USER_MODEL,
+                                  on_delete=models.PROTECT,
+                                  null=True, blank=True,
+                                  help_text="Officer who entered the code.")
     can_dos = models.TextField(
         help_text="List of do's associated with this code.")
     cannot_dos = models.TextField(
         help_text="List of don'ts associated with this code.")
-    
-    is_visible = models.BooleanField(help_text="Code officially active?", default=True)
+
+    is_visible = models.BooleanField(help_text="Code officially active?",
+                                     default=True)
 
     def __str__(self):
         '''Return the title of the Code for presentation purposes.'''

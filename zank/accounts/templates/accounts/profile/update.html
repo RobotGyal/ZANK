@@ -1,0 +1,13 @@
+<!-- zank/accounts/templates/accounts/profile/update.html -->
+{% extends 'base.html' %}
+
+    {% block content %}
+        <div class="container">
+            <h2>Change Account Status</h2>
+            <h4>Please select one of the following.</h4>
+            <br>
+            {% include 'form_template.html' %}
+            <br>
+            <h5><a href="{% url 'accounts:user-profile' user.id %}">Back to Account</a></h5>
+        </div>
+    {% endblock %}

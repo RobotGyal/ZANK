@@ -3,6 +3,7 @@
 **Search Engine for Building Codes**
 
 ![Image](../public/home.png)
+![Image](../public/codes.png)
 
 
 ## Product
@@ -230,14 +231,46 @@ Last thing for right now: was there ever a time you asked a teacher for a buildi
 
 
 ## Code Snippet
-```
-@app.route("/search", methods=['POST'])
-def search_codes():
-    query = request.get("title")
-    result = codes.find_one('title', query)
-    code_id = result.get('_id')
 
-    return redirect(url_for('show_code', code_id=code_id))
+```
+
+// EXAMPLE LAYOUT
+{
+“Title”:  <00011 and short description of code>
+“Description”: “description of the code” 
+“Examples”: <link to a floor plan image>”
+“Last_revised”: year when the code was updated (which version am I looking at?)
+“Duration_period”: number of years until the code is revised again
+}
+
+...
+
+// URL Patterns
+urlpatterns = [
+    path('', home, name='home_page'),
+    # view for the results/reference page (the list view)
+    path('codes/', CodeList.as_view(), name='reference'),
+    path('codes/add-code/', CodeCreate.as_view(), name='add_code'),
+    path('codes/<slug:slug>/edit/', CodeUpdate.as_view(), name='edit_code'),
+    path('codes/<slug:slug>/delete/', CodeDelete.as_view(),
+         name='remove_code'),
+    path('codes/<slug:slug>/', CodeDetail.as_view(), name='details'),
+]
+
+...
+
+// Code Creation Form
+class CodeForm(forms.ModelForm):
+    '''A form to handle creating and updating Codes.'''
+    class Meta:
+        model = Code
+        exclude = [
+            'slug',
+            'date_posted',
+            'last_revised',
+            'posted_by',
+        ]
+
 ```
 
 ## Contributors 

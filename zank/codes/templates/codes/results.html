@@ -1,52 +1,50 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <title>Zank</title>
   </head>
-  <body style="background-color:#B85750;">
-    <nav class="navbar navbar-dark bg-dark">
-			<a class="navbar-brand" href="../home.html">Zank</a>
-			<form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button href="results.html" class="btn btn-secondary" type="submit">Search</button>
-    </form>
-
-			</nav>
-
-
-		<div class="jumbotron text-center">
-		  <h1>Building Specifications</h1>
-		  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-			<a class="btn btn-secondary" href="../home.html" role="button">Home Page</a>
-		<div></div>
-
+    <!-- TOP NAV -->
+    <body style="background-color:#B85750;">
+        <nav class="navbar navbar-dark bg-dark">
+		    <a class="navbar-brand" href="{% url 'codes:home_page' %}">Zank</a>
+		    <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button href="{% url 'codes:reference' %}" class="btn btn-secondary" type="submit">Search</button>
+            </form>
+	    </nav>
+    <!-- JUMBOTRON -->
+	    <div class="jumbotron text-center">
+	        <h1>Building Specifications</h1>
+            <br>
+	        <a class="btn btn-secondary" href="{% url 'codes:home_page' %}" role="button">Home Page</a>
+	    </div>
+        <!-- List (possible to see messages as well) -->
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <p{% if message.tags %} class="{{ message.tags }} alert alert-success"{% endif %}>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="container">
+            <div class="card-columns" style="column-count: 2;">
+		    	{% for code in codes %}
+			        {% include 'partials/code_view.html' %}
+		    	{% endfor %}
+		    </div>
+        </div>
+    <!-- Footer Links -->
+    	<div></div><div></div>
+		<div class="footer-copyright text-center py-3">© 2019 Copyright:
+			<a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
 		</div>
-	
-		<div class="card-columns" style="column-count: 2;">
-			{% for code in codes %}
-
-				{% include 'partials/code_view.html' %}
-
-			{% endfor %}
-		</div>
-
-
-		<!-- Footer Links -->
-		<div></div><div></div>
-			<div class="footer-copyright text-center py-3">© 2019 Copyright:
-				<a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-			</div>
-			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-			</body>
-		</html>
+    	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+</html>

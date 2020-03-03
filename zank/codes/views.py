@@ -25,10 +25,11 @@ class CodeList(ListView):
     '''For showing the reference of all codes, or just ones based on search.'''
     model = Code
     template_name = 'codes/results.html'
+    queryset = Code.objects.all()
 
     def get(self, request):
         ''' Get a list of all codes currently in the database.'''
-        codes = self.get_queryset().filter(is_visible=True)
+        codes = self.queryset.filter(is_visible=True)
         return render(request, self.template_name, {
             'codes': codes
         })
@@ -68,7 +69,6 @@ class CodeCreate(UserPassesTestMixin, CreateView):
         '''Initializes the post_by field based on who submitted the form.'''
         form.instance.posted_by = self.request.user
         return super().form_valid(form)
-
 
     def get(self, request):
         '''displaying'''
@@ -128,4 +128,5 @@ class CodeDelete(LoginRequiredMixin, DeleteView):
         self.object = self.get_object()
         success_url = self.get_success_url()
         self.object.is_visible = False
+        self.object.save()
         return HttpResponseRedirect(success_url)
